@@ -1,0 +1,56 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "vision": "Vision & Mission",
+    "values": "Human Values",
+    "swamiji": "Swamiji",
+    "teachings": "Teachings",
+    "talks": "Talks",
+    "articles": "Articles",
+    "media": "Media Library",
+    "ashram": "Ashram",
+    "aboutAshram": "About Shakti Ashram",
+    "stay": "Request to Stay",
+    "directions": "Directions",
+    "events": "Events",
+    "donate": "Donate",
+    "contact": "Contact"
+  },
+  "home": {
+    "heroTitle": "Jnanashakti",
+    "heroSubtitle": "Illuminating Lives Through Ancient Wisdom",
+    "heroDescription": "Nurturing human values, spiritual education, and empowering individuals through the timeless wisdom of ancient Indian traditions.",
+    "exploreTeachings": "Explore Teachings",
+    "visitAshram": "Visit the Ashram",
+    "ourMission": "Our Mission",
+    "humanValues": "Human Values",
+    "humanValuesDesc": "Nurturing timeless values from ancient traditions for modern living",
+    "spiritualEducation": "Spiritual Education",
+    "spiritualEducationDesc": "Bridging Vedantic wisdom with contemporary understanding",
+    "empowerment": "Empowerment",
+    "empowermentDesc": "Empowering individuals and organisations through inner transformation",
+    "upcomingPrograms": "Upcoming Programs",
+    "viewAllEvents": "View All Events",
+    "teachingsWisdom": "Teachings & Wisdom",
+    "exploreAllTeachings": "Explore All Teachings",
+    "supportMission": "Support Our Mission",
+    "donateNow": "Donate Now",
+    "learnMore": "Learn More"
+  },
+  "footer": {
+    "description": "Illuminating lives through the timeless wisdom of ancient Indian traditions, fostering human values and inner transformation.",
+    "quickLinks": "Quick Links",
+    "programs": "Programs",
+    "contactUs": "Contact Us",
+    "copyright": "Jnanashakti. All rights reserved.",
+    "builtWith": "Built with devotion"
+  },
+  "common": {
+    "register": "Register",
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "submit": "Submit",
+    "backTo": "Back to"
+  }
+}
