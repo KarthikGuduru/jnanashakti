@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import {
   Flower2,
@@ -8,44 +9,65 @@ import {
   BedDouble,
   MapPin,
   ArrowRight,
+  Users,
+  Mic,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Shakti Ashram | Jnanashakti",
+  title: "Jnanashakti Ashram | A Space for Spiritual Sadhana",
   description:
-    "A serene spiritual retreat for seekers. Discover the sacred spaces, facilities, and atmosphere of Shakti Ashram.",
+    "Jnanashakti Ashram at Vave Village, Sudhagad, Maharashtra — a holistic facility by Fowai Forum for intensive sadhana, study of Upanishads and Gita, seminars, and spiritual retreats.",
 };
 
 const features = [
   {
-    icon: Flower2,
-    title: "Meditation Halls",
+    icon: BedDouble,
+    title: "Residential Blocks",
     description:
-      "Spacious halls designed for silent meditation and group practice, open from dawn to dusk.",
+      "Accommodation for spiritual aspirants undertaking long-term and short-term study courses at the ashram.",
+  },
+  {
+    icon: Flower2,
+    title: "Meditation Space",
+    description:
+      "A dedicated space designed for silent meditation and group sadhana practice, open from dawn to dusk.",
+  },
+  {
+    icon: Mic,
+    title: "Auditorium & Seminar Hall",
+    description:
+      "The Yajnavalkya Auditorium and seminar hall for discourses, workshops, and one-day sadhana camps.",
   },
   {
     icon: BookOpen,
-    title: "Library",
+    title: "Granthalaya (Library)",
     description:
-      "A curated collection of Vedantic texts, scriptures, and spiritual literature for study and contemplation.",
+      "A curated collection of Vedantic texts, Upanishads, Gita commentaries, and spiritual literature for study and contemplation.",
   },
   {
     icon: UtensilsCrossed,
-    title: "Dining",
+    title: "Maitreyi (Dining & Kitchen)",
     description:
       "Wholesome, sattvic vegetarian meals prepared with care and served communally in the dining hall.",
   },
   {
-    icon: TreePine,
-    title: "Gardens",
+    icon: Users,
+    title: "Acharya Bhavans",
     description:
-      "Lush gardens and shaded walkways that invite quiet reflection amidst nature's tranquility.",
+      "Dedicated quarters for resident teachers and instructors who conduct study courses and seminars.",
+  },
+];
+
+const visionItems = [
+  {
+    title: "Shakti",
+    description:
+      "A wing for strengthening human values and individual rejuvenation through emotional health and spiritual wisdom. For working people like executives, educators and various other professionals.",
   },
   {
-    icon: BedDouble,
-    title: "Accommodation",
+    title: "Shanti",
     description:
-      "Simple, clean rooms for visiting seekers and retreat participants, fostering an atmosphere of simplicity.",
+      "A wing for imparting advanced spiritual education, drawing from the rich heritage of Indian spirituality and wisdom traditions of the world. For those who are looking for a deeper meaning in life.",
   },
 ];
 
@@ -57,10 +79,13 @@ export default function AshramPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.12),transparent_70%)]" />
         <div className="relative mx-auto max-w-7xl px-4 text-center">
           <h1 className="font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Shakti Ashram
+            Jnana Shakti Ashram
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-white/85 sm:text-xl">
-            A sanctuary of stillness, study, and spiritual awakening
+            A Space for Spiritual Sadhana
+          </p>
+          <p className="mx-auto mt-2 max-w-xl text-sm text-white/60">
+            Vave Village, Near Jambhulpada, Sudhagad, Maharashtra
           </p>
         </div>
       </section>
@@ -72,50 +97,93 @@ export default function AshramPage() {
             {/* Text */}
             <div>
               <h2 className="font-heading text-3xl font-bold text-text-primary sm:text-4xl">
-                A Serene Retreat for Seekers
+                A Holistic Facility for Seekers
               </h2>
               <div className="mt-6 space-y-4 text-base leading-relaxed text-text-muted sm:text-lg">
                 <p>
-                  Nestled among gentle hills and ancient trees, Shakti Ashram
-                  offers a peaceful refuge for those drawn to the path of
-                  self-knowledge. Here, the rhythms of daily life are shaped by
-                  meditation, study of the scriptures, and selfless service.
+                  Spiritual wisdom is unparalleled in its power to purify and
+                  transform. Such <em>jnana</em> (wisdom) has the{" "}
+                  <em>shakti</em> (power) to take us across the river of
+                  suffering.
                 </p>
                 <p>
-                  Whether you are visiting for a day of quiet reflection or
-                  joining a residential retreat, the ashram provides an
-                  environment conducive to inner inquiry. Away from the noise of
-                  modern life, seekers find the space to turn inward and
-                  reconnect with what is essential.
+                  Fowai Forum has planned to set up Jnanashakti Ashram — a
+                  holistic facility to provide a serene ambiance for intensive
+                  sadhana and study of scriptures. Residential blocks for
+                  spiritual aspirants, accommodation for Acharyas, an
+                  auditorium, seminar hall, meditation space, and a library are
+                  among the salient features.
                 </p>
                 <p>
-                  The ashram welcomes sincere seekers of all backgrounds. Daily
-                  schedules include morning and evening meditation, satsang,
-                  Vedanta classes, and time for personal study and contemplation.
+                  Competent teachers and instructors will conduct long-term and
+                  short-term study courses, one-day sadhana camps, seminars,
+                  and more. The ashram is located at Vave Village, near
+                  Jambhulpada, Sudhagad, Maharashtra — less than three hours
+                  drive from either Mumbai airport or Pune airport.
                 </p>
               </div>
             </div>
 
-            {/* Photo placeholder */}
-            <div className="flex aspect-[4/3] items-center justify-center rounded-2xl border-2 border-dashed border-warm-border bg-warm-cream">
-              <div className="text-center">
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-saffron/10">
-                  <TreePine className="h-8 w-8 text-saffron" />
-                </div>
-                <p className="mt-3 text-sm font-medium text-text-muted">
-                  Ashram Photo
-                </p>
-                <p className="mt-1 text-xs text-text-muted/60">
-                  Image will be placed here
-                </p>
-              </div>
+            {/* Brochure image */}
+            <div className="overflow-hidden rounded-2xl border border-warm-border shadow-sm">
+              <Image
+                src="/images/ashram-brochure-2.jpg"
+                alt="Jnanashakti Ashram — A Space for Spiritual Sadhana"
+                width={1200}
+                height={850}
+                className="w-full h-auto object-cover"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── Features / Facilities ── */}
+      {/* ── Vision ── */}
       <section className="section-padding bg-warm-cream">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="text-center">
+            <span className="inline-block text-sm font-medium tracking-widest uppercase text-saffron">
+              Our Vision
+            </span>
+            <h2 className="mt-4 font-heading text-3xl font-bold text-text-primary sm:text-4xl">
+              Two Wings of Transformation
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-text-muted">
+              The ashram&apos;s vision is realised through two complementary
+              wings, each serving a distinct purpose.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 max-w-4xl mx-auto">
+            {visionItems.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-xl border border-warm-border bg-surface p-8 shadow-sm transition-shadow hover:shadow-md"
+              >
+                <h3 className="font-heading text-2xl font-semibold text-saffron">
+                  {item.title}
+                </h3>
+                <p className="mt-4 text-text-muted leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 max-w-4xl mx-auto text-center">
+            <p className="text-lg font-medium text-text-primary">
+              Our Mission
+            </p>
+            <p className="mt-2 text-text-muted max-w-2xl mx-auto">
+              To empower a human being to acquire the wisdom to respond to
+              situations, with the right action.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Facilities ── */}
+      <section className="section-padding">
         <div className="mx-auto max-w-7xl px-4">
           <div className="text-center">
             <h2 className="font-heading text-3xl font-bold text-text-primary sm:text-4xl">
@@ -147,6 +215,41 @@ export default function AshramPage() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Layout Map ── */}
+      <section className="section-padding bg-warm-cream">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="text-center">
+            <h2 className="font-heading text-3xl font-bold text-text-primary sm:text-4xl">
+              Ashram Layout
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-text-muted">
+              The planned layout of Jnanashakti Ashram at Vave Village,
+              Sudhagad.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-8 md:grid-cols-2 items-start">
+            <div className="overflow-hidden rounded-2xl border border-warm-border bg-surface shadow-sm">
+              <Image
+                src="/images/ashram-map.jpg"
+                alt="Jnanashakti Ashram site layout map"
+                width={800}
+                height={1100}
+                className="w-full h-auto object-contain"
+              />
+            </div>
+            <div className="overflow-hidden rounded-2xl border border-warm-border bg-surface shadow-sm">
+              <Image
+                src="/images/ashram-brochure-1.jpg"
+                alt="Jnanashakti Ashram layout and contribution details"
+                width={1200}
+                height={850}
+                className="w-full h-auto object-contain"
+              />
+            </div>
           </div>
         </div>
       </section>

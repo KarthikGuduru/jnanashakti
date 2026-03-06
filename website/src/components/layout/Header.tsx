@@ -26,8 +26,8 @@ const NAV_ITEMS: NavItem[] = [
     label: "About",
     href: "/about",
     children: [
-      { label: "Vision & Mission", href: "/about/vision-mission" },
-      { label: "Human Values", href: "/about/human-values" },
+      { label: "Vision & Mission", href: "/about/vision" },
+      { label: "Human Values", href: "/about/values" },
       { label: "Swamiji", href: "/about/swamiji" },
     ],
   },
@@ -37,28 +37,23 @@ const NAV_ITEMS: NavItem[] = [
     children: [
       { label: "Talks", href: "/teachings/talks" },
       { label: "Articles", href: "/teachings/articles" },
-      { label: "Media Library", href: "/teachings/media-library" },
+      { label: "Media Library", href: "/teachings/media" },
     ],
   },
   {
     label: "Ashram",
     href: "/ashram",
     children: [
-      { label: "About Shakti Ashram", href: "/ashram/about" },
+      { label: "About Shakti Ashram", href: "/ashram" },
       { label: "Request to Stay", href: "/ashram/stay" },
       { label: "Directions", href: "/ashram/directions" },
     ],
   },
   { label: "Events", href: "/events" },
+  { label: "Store", href: "/store" },
   { label: "Donate", href: "/donate", highlight: true },
   { label: "Contact", href: "/contact" },
 ];
-
-const LANGUAGES = [
-  { code: "en", label: "EN" },
-  { code: "hi", label: "HI" },
-  { code: "mr", label: "MR" },
-] as const;
 
 /* ------------------------------------------------------------------ */
 /*  Desktop dropdown                                                   */
@@ -189,7 +184,6 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [openDesktopDropdown, setOpenDesktopDropdown] = useState<string | null>(null);
   const [openMobileAccordion, setOpenMobileAccordion] = useState<string | null>(null);
-  const [activeLang, setActiveLang] = useState<string>("en");
 
   /* Track scroll position for sticky styling */
   useEffect(() => {
@@ -213,136 +207,95 @@ export default function Header() {
   }, []);
 
   return (
-    <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? "border-b border-warm-border/60 bg-surface/80 shadow-sm backdrop-blur-md"
-          : "bg-surface"
-      }`}
-    >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:h-18 sm:px-6 lg:px-8">
-        {/* ---- Logo ---- */}
-        <Link
-          href="/"
-          className="font-heading text-2xl font-bold tracking-tight text-text-primary sm:text-[1.65rem]"
-        >
-          <span className="text-saffron">Jnana</span>shakti
-        </Link>
+    <>
+      <header
+        className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+          scrolled
+            ? "border-b border-warm-border/60 bg-surface/80 shadow-sm backdrop-blur-md"
+            : "bg-surface"
+        }`}
+      >
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:h-18 sm:px-6 lg:px-8">
+          {/* ---- Logo ---- */}
+          <Link
+            href="/"
+            className="font-heading text-2xl font-bold tracking-tight text-text-primary sm:text-[1.65rem]"
+          >
+            <span className="text-saffron">Jnana</span>shakti
+          </Link>
 
-        {/* ---- Desktop nav ---- */}
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
-          {NAV_ITEMS.map((item) => {
-            if (item.highlight) {
+          {/* ---- Desktop nav ---- */}
+          <nav className="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
+            {NAV_ITEMS.map((item) => {
+              if (item.highlight) {
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-full bg-saffron px-5 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:bg-saffron-dark hover:shadow-md"
+                  >
+                    {item.label}
+                  </Link>
+                );
+              }
+
+              if (item.children) {
+                return (
+                  <DesktopDropdown
+                    key={item.label}
+                    item={item}
+                    isOpen={openDesktopDropdown === item.label}
+                    onToggle={() =>
+                      setOpenDesktopDropdown((prev) =>
+                        prev === item.label ? null : item.label
+                      )
+                    }
+                    onClose={() => setOpenDesktopDropdown(null)}
+                  />
+                );
+              }
+
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="rounded-full bg-saffron px-5 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:bg-saffron-dark hover:shadow-md"
+                  className="text-sm font-medium text-text-primary/80 transition-colors hover:text-saffron"
                 >
                   {item.label}
                 </Link>
               );
-            }
+            })}
+          </nav>
 
-            if (item.children) {
-              return (
-                <DesktopDropdown
-                  key={item.label}
-                  item={item}
-                  isOpen={openDesktopDropdown === item.label}
-                  onToggle={() =>
-                    setOpenDesktopDropdown((prev) =>
-                      prev === item.label ? null : item.label
-                    )
-                  }
-                  onClose={() => setOpenDesktopDropdown(null)}
-                />
-              );
-            }
+          {/* ---- Mobile controls ---- */}
+          <div className="flex items-center gap-3 lg:hidden">
+            {/* Donate CTA (small) */}
+            <Link
+              href="/donate"
+              className="rounded-full bg-saffron px-3.5 py-1.5 text-xs font-semibold text-white shadow-sm transition-all hover:bg-saffron-dark"
+            >
+              Donate
+            </Link>
 
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-sm font-medium text-text-primary/80 transition-colors hover:text-saffron"
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-
-          {/* Language switcher */}
-          <div className="ml-2 flex items-center gap-1 border-l border-warm-border pl-4">
-            {LANGUAGES.map((lang, i) => (
-              <span key={lang.code} className="flex items-center">
-                <button
-                  onClick={() => setActiveLang(lang.code)}
-                  className={`text-xs font-medium transition-colors ${
-                    activeLang === lang.code
-                      ? "text-saffron"
-                      : "text-text-muted hover:text-text-primary"
-                  }`}
-                >
-                  {lang.label}
-                </button>
-                {i < LANGUAGES.length - 1 && (
-                  <span className="mx-1 text-warm-border">|</span>
-                )}
-              </span>
-            ))}
+            {/* Hamburger */}
+            <button
+              onClick={() => setMobileOpen((v) => !v)}
+              className="inline-flex items-center justify-center rounded-md p-2 text-text-primary transition-colors hover:bg-warm-white"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            >
+              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
-        </nav>
-
-        {/* ---- Mobile controls ---- */}
-        <div className="flex items-center gap-3 lg:hidden">
-          {/* Language switcher (compact) */}
-          <div className="flex items-center gap-0.5 text-[11px]">
-            {LANGUAGES.map((lang, i) => (
-              <span key={lang.code} className="flex items-center">
-                <button
-                  onClick={() => setActiveLang(lang.code)}
-                  className={`font-medium transition-colors ${
-                    activeLang === lang.code
-                      ? "text-saffron"
-                      : "text-text-muted hover:text-text-primary"
-                  }`}
-                >
-                  {lang.label}
-                </button>
-                {i < LANGUAGES.length - 1 && (
-                  <span className="mx-0.5 text-warm-border">|</span>
-                )}
-              </span>
-            ))}
-          </div>
-
-          {/* Donate CTA (small) */}
-          <Link
-            href="/donate"
-            className="hidden rounded-full bg-saffron px-3.5 py-1.5 text-xs font-semibold text-white shadow-sm transition-all hover:bg-saffron-dark sm:inline-block"
-          >
-            Donate
-          </Link>
-
-          {/* Hamburger */}
-          <button
-            onClick={() => setMobileOpen((v) => !v)}
-            className="inline-flex items-center justify-center rounded-md p-2 text-text-primary transition-colors hover:bg-warm-white"
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
-          >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
-      </div>
+      </header>
 
-      {/* ---- Mobile full-screen overlay ---- */}
+      {/* ---- Mobile full-screen overlay (outside header to avoid sticky stacking context) ---- */}
       <div
-        className={`fixed inset-0 z-40 bg-text-primary transition-all duration-300 lg:hidden ${
+        className={`fixed inset-0 z-[100] bg-[#1A1A2E] transition-all duration-300 lg:hidden ${
           mobileOpen
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"
         }`}
-        style={{ top: 0 }}
       >
         {/* Close bar at top matching header height */}
         <div className="flex h-16 items-center justify-between px-4 sm:h-18 sm:px-6">
@@ -399,30 +352,8 @@ export default function Header() {
               </Link>
             );
           })}
-
-          {/* Language selector inside mobile menu */}
-          <div className="mt-8 flex items-center gap-3">
-            <span className="text-xs uppercase tracking-wider text-warm-white/40">
-              Language
-            </span>
-            <div className="flex items-center gap-2">
-              {LANGUAGES.map((lang) => (
-                <button
-                  key={lang.code}
-                  onClick={() => setActiveLang(lang.code)}
-                  className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
-                    activeLang === lang.code
-                      ? "bg-saffron text-white"
-                      : "text-warm-white/60 hover:text-warm-white"
-                  }`}
-                >
-                  {lang.label}
-                </button>
-              ))}
-            </div>
-          </div>
         </nav>
       </div>
-    </header>
+    </>
   );
 }

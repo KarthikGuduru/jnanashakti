@@ -32,7 +32,7 @@ export default function DonationCTA() {
             Donate Now
           </Link>
           <Link
-            href="/about/support"
+            href="/donate"
             className="inline-flex items-center justify-center rounded-full border-2 border-white/70 px-10 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:bg-white/10 hover:border-white hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             Learn More

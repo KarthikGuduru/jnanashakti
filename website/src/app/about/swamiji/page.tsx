@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -9,9 +10,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Swamiji | Jnanashakti Ashram",
+  title: "Swami Chidananda | Jnanashakti Ashram",
   description:
-    "Learn about Swamiji, the spiritual guide and founder of Jnanashakti Ashram, whose vision, teachings, and lifelong dedication inspire seekers on the path of wisdom and self-transformation.",
+    "Learn about Swami Chidananda, the spiritual guide and founder of Jnanashakti Ashram and FOWAI Forum, whose four decades of teaching wisdom from the Upanishads and Bhagavad Gita inspire seekers worldwide.",
 };
 
 const teachings = [
@@ -56,10 +57,10 @@ export default function SwamijiPage() {
             Back to About
           </Link>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white animate-fade-in-up">
-            Swamiji
+            Swami Chidananda
           </h1>
           <p className="mt-4 text-lg md:text-xl text-white/80 max-w-2xl animate-fade-in-up delay-100">
-            A life devoted to wisdom, service, and the upliftment of all
+            The Guiding Light
           </p>
         </div>
       </section>
@@ -69,29 +70,17 @@ export default function SwamijiPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-14 items-start">
-              {/* Photo Placeholder */}
+              {/* Photo */}
               <div className="md:col-span-2">
-                <div className="w-full aspect-[3/4] bg-warm-cream rounded-2xl border border-warm-border flex items-center justify-center shadow-sm">
-                  <div className="text-center px-6">
-                    <div className="w-16 h-16 rounded-full bg-saffron/10 flex items-center justify-center mx-auto">
-                      <svg
-                        className="w-8 h-8 text-saffron"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth={1.5}
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
-                        />
-                      </svg>
-                    </div>
-                    <p className="mt-4 text-text-muted text-sm font-medium">
-                      Photo of Swamiji
-                    </p>
-                  </div>
+                <div className="w-full overflow-hidden rounded-2xl border border-warm-border bg-warm-cream shadow-sm">
+                  <Image
+                    src="/images/swamiji.png"
+                    alt="Swami Chidananda"
+                    width={600}
+                    height={800}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
                 </div>
               </div>
 
@@ -107,37 +96,53 @@ export default function SwamijiPage() {
 
                 <div className="mt-8 space-y-5 text-text-muted leading-relaxed text-base md:text-lg">
                   <p>
-                    Swamiji&apos;s spiritual journey began in his early years,
-                    drawn by an inner calling to seek the deeper truths of
-                    existence. Guided by a profound yearning for knowledge, he
-                    immersed himself in the study of the Vedas, Upanishads,
-                    Bhagavad Gita, and other sacred texts under the tutelage of
-                    revered teachers in the Indian spiritual tradition.
+                    Swami Chidananda Ji has been a speaker, writer, and teacher
+                    of spiritual topics for nearly four decades. He is the
+                    founder, Trustee and chief resource person of FOWAI FORUM
+                    (Flame Of Who Am I), a non-government organization engaged
+                    in dialogues on human values, promotion of spiritual
+                    studies, and serving all life forms.
                   </p>
                   <p>
-                    After years of rigorous study, contemplation, and
-                    meditative practice, Swamiji emerged with a rare
-                    combination of scholarly depth and practical wisdom. His
-                    understanding of the ancient texts is not confined to
-                    academic knowledge — it is illuminated by personal
-                    experience and a living connection to the truths they
-                    convey.
+                    At the young age of 23 he was inspired by the uplifting
+                    discourses of his mentor Swami Chinmayananda Ji. He served
+                    his master&apos;s organization, Chinmaya Mission, for 18
+                    years (1984&ndash;2002) and later was at Krishnamurti
+                    Foundation India, Varanasi for 10 years
+                    (2003&ndash;2013). His thought evolved through coming in
+                    contact with the works of several great thinkers, notable
+                    among them being Ramana Maharshi and Jiddu Krishnamurti.
                   </p>
                   <p>
-                    Moved by compassion for a world increasingly disconnected
-                    from its spiritual roots, Swamiji founded Jnanashakti
-                    Ashram as a sanctuary for seekers, a centre for values
-                    education, and a beacon of hope for communities in need of
-                    guidance. His vision is clear: to make the transformative
-                    power of ancient wisdom available to every individual,
-                    regardless of background or circumstance.
+                    His four decades of involvement in the &ldquo;perennial
+                    philosophy&rdquo; of India, drawing from the celebrated
+                    Upanishads, makes him eminently competent to guide people
+                    in deeper questions of life. With his background in science
+                    and engineering education, he is also well positioned to
+                    explore themes like human values, emotional intelligence,
+                    communication, leadership and work-life integration that
+                    are of special interest to the youth of the world.
                   </p>
                   <p>
-                    Today, Swamiji continues to teach, guide, and inspire
-                    through discourses, workshops, personal mentoring, and the
-                    many programmes of Jnanashakti Ashram. His warmth,
-                    humility, and unwavering dedication to service have touched
-                    countless lives across India and beyond.
+                    He held executive positions at Rajghat Education Centre,
+                    the chapter at Varanasi of Krishnamurti Foundation India
+                    (KFI), where he was involved in projects of education and
+                    rural service. Since 2009, he has been a member of
+                    KFI&apos;s Governing Body.
+                  </p>
+                  <p>
+                    Born in 1957 in Kundapura (Udupi District, Karnataka), he
+                    received B.E. from Mysore University and M.Tech from IIT
+                    Madras. He briefly served Hindustan Computers (HCL) in
+                    hardware R&amp;D and also taught at Bangalore Institute of
+                    Technology. He knows English, Kannada, Hindi, and Sanskrit.
+                  </p>
+                  <p>
+                    He presently lives in Mumbai and travels to various places
+                    on lecture tours. Bengaluru, Chennai, Pune, Mumbai, and Goa
+                    in India are places where events are held regularly. San
+                    Jose (CA), Fort Worth (TX), and Tampa (FL) are among places
+                    in the US where audiences await his classes.
                   </p>
                 </div>
               </div>
@@ -198,14 +203,14 @@ export default function SwamijiPage() {
               &ldquo;
             </div>
             <blockquote className="mt-2 font-heading text-xl md:text-2xl italic text-white leading-snug">
-              The highest purpose of human life is to know oneself. When you
-              discover who you truly are, you discover the source of all peace,
-              all love, and all wisdom. This is the journey — from the known to
-              the unknown, from darkness to light, from the finite to the
-              infinite.
+              Spiritual wisdom is unparalleled in its power to purify and
+              transform. Such jnana (wisdom) has the shakti (power) to take us
+              across the river of suffering. Spiritual wisdom removes the
+              agitations caused by wrong ways of living in the past and the
+              fear of erring in the future.
             </blockquote>
             <p className="mt-6 text-white/70 font-medium text-sm tracking-wide">
-              — Swamiji
+              — Swami Chidananda (Inspiration: Gita)
             </p>
             <div className="mt-4 w-12 h-0.5 bg-white/30 mx-auto rounded-full" />
           </div>

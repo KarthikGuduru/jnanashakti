@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Youtube, Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
+import { Youtube, Mail, Phone, MapPin } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
@@ -10,6 +10,7 @@ const QUICK_LINKS = [
   { label: "About Us", href: "/about" },
   { label: "Teachings", href: "/teachings" },
   { label: "Events", href: "/events" },
+  { label: "Bookstore", href: "/store" },
   { label: "Donate", href: "/donate" },
   { label: "Contact", href: "/contact" },
 ];
@@ -17,7 +18,7 @@ const QUICK_LINKS = [
 const PROGRAMS = [
   { label: "Talks", href: "/teachings/talks" },
   { label: "Articles", href: "/teachings/articles" },
-  { label: "Media Library", href: "/teachings/media-library" },
+  { label: "Media Library", href: "/teachings/media" },
   { label: "Request to Stay", href: "/ashram/stay" },
   { label: "Directions", href: "/ashram/directions" },
 ];
@@ -25,18 +26,8 @@ const PROGRAMS = [
 const SOCIAL_LINKS = [
   {
     label: "YouTube",
-    href: "https://youtube.com",
+    href: "https://www.youtube.com/@fowaiforumflameofwhoami584",
     icon: Youtube,
-  },
-  {
-    label: "Instagram",
-    href: "https://instagram.com",
-    icon: Instagram,
-  },
-  {
-    label: "Facebook",
-    href: "https://facebook.com",
-    icon: Facebook,
   },
 ] as const;
 
@@ -130,31 +121,31 @@ export default function Footer() {
             <ul className="mt-4 space-y-4">
               <li>
                 <a
-                  href="mailto:info@jnanashakti.org"
+                  href="mailto:fowaiforum@gmail.com"
                   className="flex items-start gap-3 text-sm text-warm-white/60 transition-colors hover:text-saffron"
                 >
                   <Mail size={16} className="mt-0.5 shrink-0" />
-                  <span>info@jnanashakti.org</span>
+                  <span>fowaiforum@gmail.com</span>
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919969432560"
                   className="flex items-start gap-3 text-sm text-warm-white/60 transition-colors hover:text-saffron"
                 >
                   <Phone size={16} className="mt-0.5 shrink-0" />
-                  <span>+91 98765 43210</span>
+                  <span>+91 99694 32560</span>
                 </a>
               </li>
               <li>
                 <div className="flex items-start gap-3 text-sm text-warm-white/60">
                   <MapPin size={16} className="mt-0.5 shrink-0" />
                   <address className="not-italic leading-relaxed">
-                    Jnanashakti Ashram,
+                    Fowai Forum,
                     <br />
-                    Near Keshav Srushti, Bhiwandi Road,
+                    8/53, Verma Nagar, Azad Road,
                     <br />
-                    Wada, Palghar 421312,
+                    Andheri East, Mumbai 400 069,
                     <br />
                     Maharashtra, India
                   </address>

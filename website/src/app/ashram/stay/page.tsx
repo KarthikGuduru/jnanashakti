@@ -39,9 +39,15 @@ const inputClasses =
 
 const labelClasses = "block text-sm font-medium text-text-primary mb-1.5";
 
+/*
+ * Web3Forms — free tier (250 submissions/month, email notifications).
+ * Replace the access_key below with your own from https://web3forms.com
+ */
+const WEB3FORMS_KEY = "03f67aff-7f5f-4e0a-915f-c968357bd7d7";
+
 export default function StayRequestPage() {
   const [form, setForm] = useState<FormData>(initialFormData);
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   function handleChange(
     e: React.ChangeEvent<
@@ -51,10 +57,30 @@ export default function StayRequestPage() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // In the future this would send the form to an API
-    setSubmitted(true);
+    setStatus("sending");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          from_name: "Jnanashakti Ashram Stay Request",
+          subject: `Stay Request: ${form.fullName} (${form.checkIn} to ${form.checkOut})`,
+          ...form,
+        }),
+      });
+
+      if (res.ok) {
+        setStatus("sent");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -137,7 +163,7 @@ export default function StayRequestPage() {
 
             {/* ── Form ── */}
             <div className="lg:col-span-2">
-              {submitted ? (
+              {status === "sent" ? (
                 /* Success state */
                 <div className="flex flex-col items-center justify-center rounded-xl border border-warm-border bg-surface py-16 text-center shadow-sm">
                   <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
@@ -331,14 +357,22 @@ export default function StayRequestPage() {
                     </p>
                   </div>
 
+                  {status === "error" && (
+                    <p className="mt-4 text-sm text-red-600">
+                      Something went wrong. Please try again or email us at
+                      fowaiforum@gmail.com.
+                    </p>
+                  )}
+
                   {/* Submit */}
                   <div className="mt-8">
                     <button
                       type="submit"
-                      className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-saffron px-8 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-saffron-dark hover:shadow-md sm:w-auto"
+                      disabled={status === "sending"}
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-saffron px-8 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-saffron-dark hover:shadow-md disabled:opacity-60 sm:w-auto"
                     >
                       <Send className="h-4 w-4" />
-                      Submit Request
+                      {status === "sending" ? "Submitting..." : "Submit Request"}
                     </button>
                   </div>
                 </form>
