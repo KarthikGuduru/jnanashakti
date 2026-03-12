@@ -63,7 +63,7 @@ export default function DirectionsPage() {
       <section className="bg-gradient-to-br from-saffron-dark via-saffron to-earth py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 text-center">
           <h1 className="font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            How to Reach the Ashram
+            How to Reach the <span className="font-[family-name:var(--font-sanskrit)]">Āshram</span>
           </h1>
           <p className="mx-auto mt-3 max-w-xl text-base text-white/80 sm:text-lg">
             Vāve Tarfe Āsare, Sudhagadh Taluka, Raigadh Jilha,
@@ -135,7 +135,7 @@ export default function DirectionsPage() {
                   </div>
                   <div>
                     <h2 className="font-heading text-lg font-semibold text-text-primary">
-                      Ashram Address
+                      <span className="font-[family-name:var(--font-sanskrit)]">Āshram</span> Address
                     </h2>
                     <address className="mt-2 text-sm not-italic leading-relaxed text-text-muted">
                       <span className="font-[family-name:var(--font-sanskrit)]">Jnāna Shakti Āshram</span>
@@ -221,7 +221,7 @@ export default function DirectionsPage() {
             </h2>
             <p className="mx-auto mt-2 max-w-lg text-sm text-text-muted">
               If you need assistance with travel arrangements or have questions
-              about reaching the ashram, please contact us.
+              about reaching the āshram, please contact us.
             </p>
             <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-8">
               <a

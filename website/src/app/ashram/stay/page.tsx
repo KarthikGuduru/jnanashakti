@@ -89,7 +89,7 @@ export default function StayRequestPage() {
       <section className="bg-gradient-to-br from-saffron-dark via-saffron to-earth py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 text-center">
           <h1 className="font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Request to Stay at Shakti Ashram
+            Request to Stay at <span className="font-[family-name:var(--font-sanskrit)]">Shakti Āshram</span>
           </h1>
           <p className="mx-auto mt-3 max-w-xl text-base text-white/80 sm:text-lg">
             Submit your stay request below and we will get back to you with a
@@ -114,11 +114,11 @@ export default function StayRequestPage() {
             <div className="lg:col-span-1">
               <div className="rounded-xl border border-warm-border bg-warm-cream p-6">
                 <h2 className="font-heading text-xl font-semibold text-text-primary">
-                  About Ashram Stays
+                  About <span className="font-[family-name:var(--font-sanskrit)]">Āshram</span> Stays
                 </h2>
                 <div className="mt-4 space-y-3 text-sm leading-relaxed text-text-muted">
                   <p>
-                    Staying at Shakti Ashram is a unique opportunity to immerse
+                    Staying at <span className="font-[family-name:var(--font-sanskrit)]">Shakti Āshram</span> is a unique opportunity to immerse
                     yourself in a life of contemplation, study, and service.
                     Guests are expected to participate in the daily schedule,
                     which includes morning and evening meditation, satsang, and communal meals.
@@ -172,7 +172,7 @@ export default function StayRequestPage() {
                     Request Submitted
                   </h2>
                   <p className="mt-2 max-w-md text-text-muted">
-                    Thank you for your interest in staying at Shakti Ashram. We
+                    Thank you for your interest in staying at <span className="font-[family-name:var(--font-sanskrit)]">Shakti Āshram</span>. We
                     will review your request and send a confirmation to{" "}
                     <span className="font-medium text-text-primary">
                       {form.email}

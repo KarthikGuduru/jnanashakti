@@ -30,7 +30,7 @@ const features = [
     icon: Flower2,
     title: "Meditation Space",
     description:
-      "A dedicated space designed for silent meditation and group sadhana practice, open from dawn to dusk.",
+      "A dedicated space designed for silent meditation and group sādhanā practice, open from dawn to dusk.",
   },
   {
     icon: Mic,
@@ -107,17 +107,17 @@ export default function AshramPage() {
                   suffering.
                 </p>
                 <p>
-                  Fowai Forum has planned to set up Jnanashakti Ashram — a
+                  Fowai Forum has planned to set up <span className="font-[family-name:var(--font-sanskrit)]">Jnānashakti Āshram</span> — a
                   holistic facility to provide a serene ambiance for intensive
-                  sadhana and study of scriptures. Residential blocks for
-                  spiritual aspirants, accommodation for Acharyas, an
+                  sādhanā and study of scriptures. Residential blocks for
+                  spiritual aspirants, accommodation for <span className="font-[family-name:var(--font-sanskrit)]">Āchāryas</span>, an
                   auditorium, seminar hall, meditation space, and a library are
                   among the salient features.
                 </p>
                 <p>
                   Competent teachers and instructors will conduct long-term and
-                  short-term study courses, one-day sadhana camps, seminars,
-                  and more. The ashram is located at Vave Village, near
+                  short-term study courses, one-day sādhanā camps, seminars,
+                  and more. The āshram is located at Vave Village, near
                   Jambhulpada, Sudhagad, Maharashtra — less than three hours
                   drive from either Mumbai airport or Pune airport.
                 </p>
@@ -149,7 +149,7 @@ export default function AshramPage() {
               Two Wings of Transformation
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-text-muted">
-              The ashram&apos;s vision is realised through two complementary
+              The āshram&apos;s vision is realised through two complementary
               wings, each serving a distinct purpose.
             </p>
           </div>
@@ -187,7 +187,7 @@ export default function AshramPage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="text-center">
             <h2 className="font-heading text-3xl font-bold text-text-primary sm:text-4xl">
-              Ashram Facilities
+              <span className="font-[family-name:var(--font-sanskrit)]">Āshram</span> Facilities
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-text-muted">
               Everything you need for a focused and nourishing stay, rooted in
@@ -224,10 +224,10 @@ export default function AshramPage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="text-center">
             <h2 className="font-heading text-3xl font-bold text-text-primary sm:text-4xl">
-              Ashram Layout
+              <span className="font-[family-name:var(--font-sanskrit)]">Āshram</span> Layout
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-text-muted">
-              The planned layout of Jnanashakti Ashram at Vave Village,
+              The planned layout of <span className="font-[family-name:var(--font-sanskrit)]">Jnānashakti Āshram</span> at Vave Village,
               Sudhagad.
             </p>
           </div>
@@ -262,7 +262,7 @@ export default function AshramPage() {
               Plan Your Visit
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-text-muted">
-              Experience the peace and wisdom of ashram life. Submit a stay
+              Experience the peace and wisdom of āshram life. Submit a stay
               request or find directions to reach us.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
