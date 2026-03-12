@@ -149,11 +149,11 @@ export default function Footer() {
                 <div className="flex items-start gap-3 text-sm text-warm-white/60">
                   <MapPin size={16} className="mt-0.5 shrink-0" />
                   <address className="not-italic leading-relaxed">
-                    Fowai Forum,
+                    Jnanashakti Ashram,
                     <br />
-                    8/53, Verma Nagar, Azad Road,
+                    Vave Village, Near Jambhulpada,
                     <br />
-                    Andheri East, Mumbai 400 069,
+                    Sudhagad, Raigad District,
                     <br />
                     Maharashtra, India
                   </address>
