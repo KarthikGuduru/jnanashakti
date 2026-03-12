@@ -60,9 +60,9 @@ export default function Footer() {
               <span className="font-[family-name:var(--font-sanskrit)]"><span className="text-saffron">Jnāna</span>shakti</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-warm-white/60">
-              Jnanashakti Ashram is a spiritual sanctuary dedicated to the
+              <span className="font-[family-name:var(--font-sanskrit)]">Jnānashakti Āshram</span> is a spiritual sanctuary dedicated to the
               pursuit of self-knowledge, inner transformation, and the timeless
-              wisdom of Vedanta. We welcome seekers of all backgrounds on the
+              wisdom of <span className="font-[family-name:var(--font-sanskrit)]">Vedānta</span>. We welcome seekers of all backgrounds on the
               path of awakening.
             </p>
 
@@ -167,7 +167,7 @@ export default function Footer() {
       {/* ---- Bottom bar ---- */}
       <div className="border-t border-warm-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-xs text-warm-white/40 sm:flex-row sm:px-6 lg:px-8">
-          <p>&copy; {currentYear} Jnanashakti Ashram. All rights reserved.</p>
+          <p>&copy; {currentYear} <span className="font-[family-name:var(--font-sanskrit)]">Jnānashakti Āshram</span>. All rights reserved.</p>
           <p className="italic">Built with devotion</p>
         </div>
       </div>
