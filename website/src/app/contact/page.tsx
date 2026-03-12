@@ -22,10 +22,10 @@ const CONTACT_INFO = [
     icon: MapPin,
     label: "Office Address",
     lines: [
-      "Fowai Forum",
-      "8/53, Verma Nagar, Azad Road",
-      "Andheri East, Mumbai 400 069",
-      "Maharashtra, India",
+      "Jnāna Shakti Āshram",
+      "Vāve Tarfe Āsare (वावे तर्फ़े आसरे)",
+      "Sudhagadh Taluka, Raigadh Jilha",
+      "Maharashtra 410 205, India",
     ],
   },
   {
@@ -317,11 +317,11 @@ export default function ContactPage() {
       <section className="section-padding border-t border-warm-border bg-warm-cream/30">
         <div className="mx-auto max-w-7xl px-4">
           <h2 className="text-center font-heading text-2xl font-bold text-text-primary sm:text-3xl">
-            Find the Ashram
+            Find the <span className="font-[family-name:var(--font-sanskrit)]">Āshram</span>
           </h2>
           <p className="mt-2 text-center text-text-muted">
-            Vave Village, Near Jambhulpada, Sudhagad, Raigad District,
-            Maharashtra
+            Vāve Tarfe Āsare, Sudhagadh Taluka, Raigadh Jilha,
+            Maharashtra 410 205
           </p>
 
           <div className="relative mt-8 overflow-hidden rounded-2xl border border-warm-border shadow-sm">
