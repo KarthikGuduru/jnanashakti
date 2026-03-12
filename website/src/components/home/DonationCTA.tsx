@@ -18,8 +18,8 @@ export default function DonationCTA() {
         </h2>
 
         <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg">
-          Your generous contributions help sustain ashram activities, fund
-          educational programs, and bring the light of Vedantic wisdom to
+          Your generous contributions help sustain āshram activities, fund
+          educational programs, and bring the light of <span className="font-[family-name:var(--font-sanskrit)]">Vedāntic</span> wisdom to
           communities across the world. Every offering, however small, makes a
           meaningful difference.
         </p>

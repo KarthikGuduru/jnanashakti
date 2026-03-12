@@ -121,8 +121,7 @@ export default function StayRequestPage() {
                     Staying at Shakti Ashram is a unique opportunity to immerse
                     yourself in a life of contemplation, study, and service.
                     Guests are expected to participate in the daily schedule,
-                    which includes morning and evening meditation, satsang, and
-                    communal meals.
+                    which includes morning and evening meditation, satsang, and communal meals.
                   </p>
                   <p>
                     Accommodation is simple and clean, reflecting the ashram's
@@ -151,7 +150,7 @@ export default function StayRequestPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-saffron" />
-                    Participate in the daily schedule and seva (service)
+                    Participate in the daily schedule and sevā (service)
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-saffron" />

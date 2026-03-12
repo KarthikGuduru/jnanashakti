@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Yatra_One } from "next/font/google";
+import { Inter, Playfair_Display, Tiro_Devanagari_Sanskrit } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
@@ -16,7 +16,7 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const yatra = Yatra_One({
+const sanskrit = Tiro_Devanagari_Sanskrit({
   variable: "--font-sanskrit",
   weight: "400",
   subsets: ["latin", "devanagari"],
@@ -58,7 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${playfair.variable} ${yatra.variable} font-[family-name:var(--font-body)] antialiased`}
+        className={`${inter.variable} ${playfair.variable} ${sanskrit.variable} font-[family-name:var(--font-body)] antialiased`}
       >
         <Header />
         <main className="min-h-[calc(100dvh-4rem)]">{children}</main>

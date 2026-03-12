@@ -20,7 +20,7 @@ const teachings = [
     icon: Lightbulb,
     title: "Knowledge as Liberation",
     description:
-      "Swamiji teaches that true knowledge — Jnana — is not merely intellectual understanding but a direct, transformative experience of reality. Through self-enquiry and the study of sacred texts, the seeker peels away the layers of ignorance to reveal the luminous self within.",
+      "Swamiji teaches that true knowledge — Jnāna — is not merely intellectual understanding but a direct, transformative experience of reality. Through self-enquiry and the study of sacred texts, the seeker peels away the layers of ignorance to reveal the luminous self within.",
   },
   {
     icon: Heart,
@@ -32,7 +32,7 @@ const teachings = [
     icon: Flame,
     title: "Service as Worship",
     description:
-      "Swamiji holds that selfless service (Seva) is one of the highest forms of spiritual practice. By serving others without expectation of reward, we purify the heart, dissolve the ego, and experience the divine in every being we encounter.",
+      "Swamiji holds that selfless service (Sevā) is one of the highest forms of spiritual practice. By serving others without expectation of reward, we purify the heart, dissolve the ego, and experience the divine in every being we encounter.",
   },
   {
     icon: BookOpen,

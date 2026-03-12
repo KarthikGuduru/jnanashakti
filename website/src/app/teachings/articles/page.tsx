@@ -24,7 +24,7 @@ const ARTICLES = [
   {
     title: "Karma Yoga: The Art of Selfless Action",
     excerpt:
-      "The Bhagavad Gita teaches us that true freedom lies not in inaction but in action performed without attachment to results. This piece examines how Karma Yoga transforms every daily activity into a spiritual practice, from the simplest chores to the most demanding responsibilities.",
+      "The Bhagavad Gītā teaches us that true freedom lies not in inaction but in action performed without attachment to results. This piece examines how Karma Yoga transforms every daily activity into a spiritual practice, from the simplest chores to the most demanding responsibilities.",
     date: "28 Jan 2025",
     readTime: "12 min read",
     category: "Philosophy",
@@ -32,15 +32,15 @@ const ARTICLES = [
   {
     title: "Guru and Grace: The Living Tradition",
     excerpt:
-      "The Guru-Shishya Parampara is the backbone of Indian spiritual transmission. This article reflects on the sacred relationship between teacher and student, and how grace flows through lineage to awaken the dormant knowledge within the seeker.",
+      "The Guru-Shishya Paramparā is the backbone of Indian spiritual transmission. This article reflects on the sacred relationship between teacher and student, and how grace flows through lineage to awaken the dormant knowledge within the seeker.",
     date: "15 Jan 2025",
     readTime: "10 min read",
     category: "Tradition",
   },
   {
-    title: "Understanding Samskaras: The Seeds of Habit",
+    title: "Understanding Samskāras: The Seeds of Habit",
     excerpt:
-      "Our deeply ingrained patterns of thought and behaviour, known as samskaras, shape our experience of reality. Swamiji explains the Vedantic view of how these impressions form, persist, and can ultimately be transcended through awareness and right effort.",
+      "Our deeply ingrained patterns of thought and behaviour, known as samskāras, shape our experience of reality. Swamiji explains the Vedāntic view of how these impressions form, persist, and can ultimately be transcended through awareness and right effort.",
     date: "02 Dec 2024",
     readTime: "9 min read",
     category: "Vedanta",
@@ -48,15 +48,15 @@ const ARTICLES = [
   {
     title: "The Three States of Consciousness",
     excerpt:
-      "Waking, dreaming, and deep sleep -- the Mandukya Upanishad uses these three familiar states to point towards the fourth, Turiya, the unchanging witness of all experience. A profound teaching that reveals the nature of awareness itself.",
+      "Waking, dreaming, and deep sleep — the Māndūkya Upanishad uses these three familiar states to point towards the fourth, Turīya, the unchanging witness of all experience. A profound teaching that reveals the nature of awareness itself.",
     date: "18 Nov 2024",
     readTime: "11 min read",
     category: "Upanishads",
   },
   {
-    title: "Ahimsa in the Modern World",
+    title: "Ahimsā in the Modern World",
     excerpt:
-      "Non-violence is far more than the absence of physical harm. This article explores the deeper dimensions of ahimsa as taught in the Indian tradition -- non-violence in thought, speech, and action, and its relevance in our interconnected world.",
+      "Non-violence is far more than the absence of physical harm. This article explores the deeper dimensions of ahimsā as taught in the Indian tradition — non-violence in thought, speech, and action, and its relevance in our interconnected world.",
     date: "05 Oct 2024",
     readTime: "7 min read",
     category: "Ethics",
@@ -103,7 +103,7 @@ export default function ArticlesPage() {
                   className="group rounded-2xl border border-warm-border bg-surface p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                 >
                   <div className="flex items-center gap-3">
-                    <span className="rounded-full bg-saffron/10 px-3 py-1 text-xs font-semibold text-saffron">
+                    <span className="rounded-full bg-saffron/10 px-3 py-1 text-xs font-semibold font-[family-name:var(--font-sanskrit)] text-saffron">
                       {article.category}
                     </span>
                     <span className="flex items-center gap-1 text-xs text-text-muted">

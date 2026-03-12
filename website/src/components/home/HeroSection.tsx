@@ -37,7 +37,7 @@ export default function HeroSection() {
         </p>
 
         <p className="mx-auto mt-6 max-w-2xl text-base text-white/80 leading-relaxed sm:text-lg animate-fade-in-up delay-200">
-          Rooted in the timeless traditions of India, Jnanashakti nurtures human
+          Rooted in the timeless traditions of India, <span className="font-[family-name:var(--font-sanskrit)]">Jnānashakti</span> nurtures human
           values, imparts spiritual education, and empowers individuals and
           organisations through inner transformation.
         </p>

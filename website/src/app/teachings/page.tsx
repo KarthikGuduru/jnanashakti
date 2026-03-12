@@ -17,7 +17,7 @@ const SECTIONS = [
     icon: Video,
     title: "Talks",
     description:
-      "Watch and listen to Swamiji's discourses on Vedanta, meditation, dharma, and the art of conscious living. Audio and video recordings of satsangs and public talks.",
+      "Watch and listen to Swamiji's discourses on Vedānta, meditation, dharma, and the art of conscious living. Audio and video recordings of satsangs and public talks.",
     href: "/teachings/talks",
     count: "50+ recordings",
   },
@@ -64,8 +64,8 @@ export default function TeachingsPage() {
               Teachings &amp; Wisdom
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-white/85 sm:text-xl">
-              A treasury of spiritual knowledge drawn from the timeless wisdom of
-              Vedanta and the living tradition of the Guru-Shishya Parampara.
+              A treasury of spiritual knowledge drawn from the timeless wisdom of{" "}
+              <span className="font-[family-name:var(--font-sanskrit)]">Vedānta</span> and the living tradition of the <span className="font-[family-name:var(--font-sanskrit)]">Guru-Shishya Paramparā</span>.
             </p>
           </div>
         </section>

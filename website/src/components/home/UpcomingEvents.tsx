@@ -16,7 +16,7 @@ const events: Event[] = [
     date: { day: "15", month: "Apr" },
     title: "Weekend Meditation Retreat",
     description:
-      "A two-day silent retreat immersing participants in guided meditation, pranayama, and contemplative practices rooted in Vedantic teachings.",
+      "A two-day silent retreat immersing participants in guided meditation, prānāyāma, and contemplative practices rooted in Vedāntic teachings.",
     location: "Jnanashakti Ashram, Coimbatore",
     registrationHref: "/events/meditation-retreat",
   },

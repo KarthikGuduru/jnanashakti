@@ -87,7 +87,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     title: "Library & Study Hall",
-    caption: "A quiet space housing rare texts on Vedanta, Yoga, and Indian philosophy",
+    caption: "A quiet space housing rare texts on Vedānta, Yoga, and Indian philosophy",
     category: "ashram",
     height: "h-60",
     gradient: "from-earth/8 to-warm-cream",
@@ -101,7 +101,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     title: "Bhajan Evening",
-    caption: "Devotional singing under the open sky in the ashram courtyard",
+    caption: "Devotional singing under the open sky in the āshram courtyard",
     category: "satsang",
     height: "h-56",
     gradient: "from-saffron-light/15 to-orange-accent/5",
@@ -147,7 +147,7 @@ export default function GalleryPage() {
               Photo Gallery
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-white/85 sm:text-xl">
-              Glimpses of life at Shakti Ashram -- moments of devotion, learning,
+              Glimpses of life at <span className="font-[family-name:var(--font-sanskrit)]">Shakti Āshram</span> — moments of devotion, learning,
               celebration, and the natural beauty that surrounds our spiritual home.
             </p>
           </div>

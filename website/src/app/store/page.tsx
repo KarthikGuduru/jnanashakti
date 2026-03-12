@@ -18,7 +18,7 @@ const BOOKS = [
     title: "The Equanimous Mind",
     image: "/images/book-equanimous-mind.jpg",
     description:
-      "An exploration of mental equanimity and inner balance through the lens of Vedantic wisdom. Swami Chidananda guides the reader towards a mind that remains steady amidst the ups and downs of life.",
+      "An exploration of mental equanimity and inner balance through the lens of Vedāntic wisdom. Swāmi Chidānanda guides the reader towards a mind that remains steady amidst the ups and downs of life.",
     language: "English",
     href: "https://fowai.org/product/equanimous-mind",
   },
@@ -26,7 +26,7 @@ const BOOKS = [
     title: "Erase the Ego",
     image: "/images/book-erase-ego.jpg",
     description:
-      "A penetrating inquiry into the nature of the ego and how it veils our true self. Drawing from the Upanishads and Bhagavad Gita, this book offers practical insights for transcending the limited sense of 'I'.",
+      "A penetrating inquiry into the nature of the ego and how it veils our true self. Drawing from the Upanishads and Bhagavad Gītā, this book offers practical insights for transcending the limited sense of 'I'.",
     language: "English",
     href: "https://fowai.org/product/erase-the-ego",
   },
@@ -43,7 +43,7 @@ const BOOKS = [
     title: "Mukunda Mala",
     image: "/images/book-mukunda-mala.jpg",
     description:
-      "A devotional classic — the Mukunda Mala Stotra is a garland of verses in praise of Lord Krishna. Swami Chidananda presents this timeless hymn with commentary that deepens the reader's understanding of Bhakti.",
+      "A devotional classic — the Mukunda Māla Stotra is a garland of verses in praise of Lord Krishna. Swāmi Chidānanda presents this timeless hymn with commentary that deepens the reader's understanding of Bhakti.",
     language: "English",
     href: "https://fowai.org/product/mumkunda-mala",
   },
@@ -97,7 +97,7 @@ export default function StorePage() {
             Bookstore
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85 sm:text-xl">
-            Publications by Swami Chidananda — books that distil timeless
+            Publications by <span className="font-[family-name:var(--font-sanskrit)]">Swāmi Chidānanda</span> — books that distil timeless
             spiritual wisdom into practical guidance for seekers.
           </p>
         </div>
@@ -137,7 +137,7 @@ export default function StorePage() {
                     </p>
                   )}
                   <p className="mt-1 text-xs text-text-muted">
-                    Swami Chidananda &middot; {book.language}
+                    <span className="font-[family-name:var(--font-sanskrit)]">Swāmi Chidānanda</span> &middot; {book.language}
                   </p>
 
                   <p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-text-muted">

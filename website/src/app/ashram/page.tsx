@@ -24,7 +24,7 @@ const features = [
     icon: BedDouble,
     title: "Residential Blocks",
     description:
-      "Accommodation for spiritual aspirants undertaking long-term and short-term study courses at the ashram.",
+      "Accommodation for spiritual aspirants undertaking long-term and short-term study courses at the āshram.",
   },
   {
     icon: Flower2,
@@ -52,7 +52,7 @@ const features = [
   },
   {
     icon: Users,
-    title: "Acharya Bhavans",
+    title: "Āchārya Bhavans",
     description:
       "Dedicated quarters for resident teachers and instructors who conduct study courses and seminars.",
   },

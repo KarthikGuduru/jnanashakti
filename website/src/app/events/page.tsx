@@ -27,7 +27,7 @@ const EVENTS: EventItem[] = [
     id: "meditation-retreat",
     title: "Meditation Retreat",
     description:
-      "A three-day immersive retreat focusing on silent meditation, pranayama, and guided contemplation for inner peace.",
+      "A three-day immersive retreat focusing on silent meditation, prānāyāma, and guided contemplation for inner peace.",
     dateLabel: "Mar 15 - 17, 2026",
     month: "MAR",
     day: "15",
@@ -38,7 +38,7 @@ const EVENTS: EventItem[] = [
     id: "weekend-satsang",
     title: "Weekend Satsang",
     description:
-      "Join us every Saturday for satsang with discourse on Vedantic teachings, devotional chanting, and guided meditation.",
+      "Join us every Saturday for satsang with discourse on Vedāntic teachings, devotional chanting, and guided meditation.",
     dateLabel: "Every Saturday",
     month: "SAT",
     day: "Eve",
@@ -60,7 +60,7 @@ const EVENTS: EventItem[] = [
     id: "vedanta-study",
     title: "Vedanta Study Group",
     description:
-      "Weekly sessions studying the Upanishads and Bhagavad Gita under the guidance of senior teachers. Open to all levels.",
+      "Weekly sessions studying the Upanishads and Bhagavad Gītā under the guidance of senior teachers. Open to all levels.",
     dateLabel: "Every Wednesday",
     month: "WED",
     day: "Eve",
@@ -132,7 +132,7 @@ export default function EventsPage() {
             Programs &amp; Events
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-white/85 sm:text-xl">
-            Explore retreats, workshops, and satsang sessions at Shakti Ashram
+            Explore retreats, workshops, and <span className="font-[family-name:var(--font-sanskrit)]">satsang</span> sessions at Shakti Ashram
           </p>
         </div>
       </section>

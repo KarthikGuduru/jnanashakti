@@ -150,7 +150,7 @@ export default function MediaPage() {
             Media Library
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85">
-            Browse video discourses and audio talks by Swami Chidananda from the
+            Browse video discourses and audio talks by <span className="font-[family-name:var(--font-sanskrit)]">Swāmi Chidānanda</span> from the
             Fowai Forum YouTube channel.
           </p>
         </div>
@@ -244,7 +244,7 @@ export default function MediaPage() {
                         <Clock size={12} />
                         {item.duration}
                       </span>
-                      <span className="rounded-full bg-saffron/10 px-2.5 py-0.5 text-xs font-medium text-saffron">
+                      <span className="rounded-full bg-saffron/10 px-2.5 py-0.5 text-xs font-medium font-[family-name:var(--font-sanskrit)] text-saffron">
                         {item.series}
                       </span>
                     </div>
