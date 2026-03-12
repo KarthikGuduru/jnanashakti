@@ -28,8 +28,8 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-        <h1 className="font-heading text-5xl font-bold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl animate-fade-in-up">
-          Jnanashakti
+        <h1 className="font-[family-name:var(--font-sanskrit)] text-5xl tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl animate-fade-in-up">
+          Jnānashakti
         </h1>
 
         <p className="mt-4 font-heading text-lg text-white/90 italic sm:text-xl md:text-2xl animate-fade-in-up delay-100">

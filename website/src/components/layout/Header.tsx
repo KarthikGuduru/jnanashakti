@@ -230,7 +230,7 @@ export default function Header() {
               className="h-9 w-9 rounded-full object-cover sm:h-10 sm:w-10"
               priority
             />
-            <span><span className="text-saffron">Jnana</span>shakti</span>
+            <span className="font-[family-name:var(--font-sanskrit)]"><span className="text-saffron">Jnāna</span>shakti</span>
           </Link>
 
           {/* ---- Desktop nav ---- */}
@@ -320,7 +320,7 @@ export default function Header() {
               height={40}
               className="h-9 w-9 rounded-full object-cover sm:h-10 sm:w-10"
             />
-            <span><span className="text-saffron">Jnana</span>shakti</span>
+            <span className="font-[family-name:var(--font-sanskrit)]"><span className="text-saffron">Jnāna</span>shakti</span>
           </Link>
           <button
             onClick={closeMobile}

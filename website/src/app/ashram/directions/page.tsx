@@ -66,8 +66,8 @@ export default function DirectionsPage() {
             How to Reach the Ashram
           </h1>
           <p className="mx-auto mt-3 max-w-xl text-base text-white/80 sm:text-lg">
-            Vave Village, Near Jambhulpada, Sudhagad, Raigad District,
-            Maharashtra
+            Vāve Tarfe Āsare, Sudhagadh Taluka, Raigadh Jilha,
+            Maharashtra 410 205
           </p>
         </div>
       </section>
@@ -103,11 +103,11 @@ export default function DirectionsPage() {
                   <span className="text-lg font-bold leading-none">ॐ</span>
                 </div>
                 <div className="min-w-0">
-                  <p className="text-sm font-semibold text-text-primary">
-                    Jnana Shakti Ashram
+                  <p className="text-sm font-[family-name:var(--font-sanskrit)] text-text-primary">
+                    Jnāna Shakti Āshram
                   </p>
                   <p className="truncate text-xs text-text-muted">
-                    Vave Village, Sudhagad, Maharashtra
+                    Vāve Tarfe Āsare, Sudhagadh, Maharashtra
                   </p>
                 </div>
               </div>
@@ -138,13 +138,13 @@ export default function DirectionsPage() {
                       Ashram Address
                     </h2>
                     <address className="mt-2 text-sm not-italic leading-relaxed text-text-muted">
-                      Jnana Shakti Ashram
+                      <span className="font-[family-name:var(--font-sanskrit)]">Jnāna Shakti Āshram</span>
                       <br />
-                      Vave Village, Near Jambhulpada
+                      Vāve Tarfe Āsare (वावे तर्फ़े आसरे)
                       <br />
-                      Sudhagad, Raigad District
+                      Sudhagadh Taluka, Raigadh Jilha
                       <br />
-                      Maharashtra, India
+                      Maharashtra 410 205, India
                     </address>
                   </div>
                 </div>

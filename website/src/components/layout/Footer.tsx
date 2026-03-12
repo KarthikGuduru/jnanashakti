@@ -57,7 +57,7 @@ export default function Footer() {
                 height={40}
                 className="h-9 w-9 rounded-full object-cover sm:h-10 sm:w-10"
               />
-              <span><span className="text-saffron">Jnana</span>shakti</span>
+              <span className="font-[family-name:var(--font-sanskrit)]"><span className="text-saffron">Jnāna</span>shakti</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-warm-white/60">
               Jnanashakti Ashram is a spiritual sanctuary dedicated to the
@@ -149,13 +149,13 @@ export default function Footer() {
                 <div className="flex items-start gap-3 text-sm text-warm-white/60">
                   <MapPin size={16} className="mt-0.5 shrink-0" />
                   <address className="not-italic leading-relaxed">
-                    Jnanashakti Ashram,
+                    <span className="font-[family-name:var(--font-sanskrit)]">Jnāna Shakti Āshram</span>,
                     <br />
-                    Vave Village, Near Jambhulpada,
+                    Vāve Tarfe Āsare (वावे तर्फ़े आसरे),
                     <br />
-                    Sudhagad, Raigad District,
+                    Sudhagadh Taluka, Raigadh Jilha,
                     <br />
-                    Maharashtra, India
+                    Maharashtra 410 205, India
                   </address>
                 </div>
               </li>

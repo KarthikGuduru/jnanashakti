@@ -56,8 +56,8 @@ export default function SwamijiPage() {
             <ArrowLeft className="w-4 h-4" />
             Back to About
           </Link>
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white animate-fade-in-up">
-            Swami Chidananda
+          <h1 className="text-4xl md:text-5xl lg:text-6xl text-white animate-fade-in-up">
+            <span className="font-[family-name:var(--font-sanskrit)]">Swāmi Chidānanda</span>
           </h1>
           <p className="mt-4 text-lg md:text-xl text-white/80 max-w-2xl animate-fade-in-up delay-100">
             The Guiding Light
@@ -204,7 +204,7 @@ export default function SwamijiPage() {
             </div>
             <blockquote className="mt-2 font-heading text-xl md:text-2xl italic text-white leading-snug">
               Spiritual wisdom is unparalleled in its power to purify and
-              transform. Such jnana (wisdom) has the shakti (power) to take us
+              transform. Such <span className="font-[family-name:var(--font-sanskrit)] not-italic">jnāna</span> (wisdom) has the <span className="font-[family-name:var(--font-sanskrit)] not-italic">shakti</span> (power) to take us
               across the river of suffering. Spiritual wisdom removes the
               agitations caused by wrong ways of living in the past and the
               fear of erring in the future.

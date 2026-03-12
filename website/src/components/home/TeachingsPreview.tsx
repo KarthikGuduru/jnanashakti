@@ -61,8 +61,8 @@ export default function TeachingsPreview() {
               Explore a Living Tradition
             </h3>
             <p className="mt-4 leading-relaxed text-text-muted">
-              The teachings offered at Jnanashakti draw from the wellspring of
-              Vedanta, the Upanishads, and the Bhagavad Gita, presented with
+              The teachings offered at <span className="font-[family-name:var(--font-sanskrit)]">Jnānashakti</span> draw from the wellspring of
+              <span className="font-[family-name:var(--font-sanskrit)]">Vedānta</span>, the <span className="font-[family-name:var(--font-sanskrit)]">Upanishads</span>, and the <span className="font-[family-name:var(--font-sanskrit)]">Bhagavad Gītā</span>, presented with
               clarity and relevance for seekers in the modern world. Whether
               through talks, written reflections, or guided sessions, each
               teaching aims to kindle the inner light of understanding and

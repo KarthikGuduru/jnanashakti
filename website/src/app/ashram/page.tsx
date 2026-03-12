@@ -36,17 +36,17 @@ const features = [
     icon: Mic,
     title: "Auditorium & Seminar Hall",
     description:
-      "The Yajnavalkya Auditorium and seminar hall for discourses, workshops, and one-day sadhana camps.",
+      "The Yājnavalkya Auditorium and seminar hall for discourses, workshops, and one-day sādhanā camps.",
   },
   {
     icon: BookOpen,
-    title: "Granthalaya (Library)",
+    title: "Granthālaya (Library)",
     description:
-      "A curated collection of Vedantic texts, Upanishads, Gita commentaries, and spiritual literature for study and contemplation.",
+      "A curated collection of Vedāntic texts, Upanishads, Gītā commentaries, and spiritual literature for study and contemplation.",
   },
   {
     icon: UtensilsCrossed,
-    title: "Maitreyi (Dining & Kitchen)",
+    title: "Maitreyī (Dining & Kitchen)",
     description:
       "Wholesome, sattvic vegetarian meals prepared with care and served communally in the dining hall.",
   },
@@ -78,11 +78,11 @@ export default function AshramPage() {
       <section className="relative bg-gradient-to-br from-saffron-dark via-saffron to-earth py-24 sm:py-32">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.12),transparent_70%)]" />
         <div className="relative mx-auto max-w-7xl px-4 text-center">
-          <h1 className="font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Jnana Shakti Ashram
+          <h1 className="font-[family-name:var(--font-sanskrit)] text-4xl tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Jnāna Shakti Āshram
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/85 sm:text-xl">
-            A Space for Spiritual Sadhana
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/85 sm:text-xl font-[family-name:var(--font-sanskrit)]">
+            A Space for Spiritual Sādhanā
           </p>
           <p className="mx-auto mt-2 max-w-xl text-sm text-white/60">
             Vave Village, Near Jambhulpada, Sudhagad, Maharashtra
@@ -102,8 +102,8 @@ export default function AshramPage() {
               <div className="mt-6 space-y-4 text-base leading-relaxed text-text-muted sm:text-lg">
                 <p>
                   Spiritual wisdom is unparalleled in its power to purify and
-                  transform. Such <em>jnana</em> (wisdom) has the{" "}
-                  <em>shakti</em> (power) to take us across the river of
+                  transform. Such <em className="font-[family-name:var(--font-sanskrit)] not-italic">jnāna</em> (wisdom) has the{" "}
+                  <em className="font-[family-name:var(--font-sanskrit)] not-italic">shakti</em> (power) to take us across the river of
                   suffering.
                 </p>
                 <p>
@@ -160,7 +160,7 @@ export default function AshramPage() {
                 key={item.title}
                 className="rounded-xl border border-warm-border bg-surface p-8 shadow-sm transition-shadow hover:shadow-md"
               >
-                <h3 className="font-heading text-2xl font-semibold text-saffron">
+                <h3 className="font-[family-name:var(--font-sanskrit)] text-2xl text-saffron">
                   {item.title}
                 </h3>
                 <p className="mt-4 text-text-muted leading-relaxed">
@@ -206,7 +206,7 @@ export default function AshramPage() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-saffron/10">
                     <Icon className="h-6 w-6 text-saffron" />
                   </div>
-                  <h3 className="mt-4 font-heading text-xl font-semibold text-text-primary">
+                  <h3 className="mt-4 font-[family-name:var(--font-sanskrit)] text-xl text-text-primary">
                     {f.title}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-text-muted">

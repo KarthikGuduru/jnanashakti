@@ -129,7 +129,7 @@ export default function ValuesPage() {
                     <Icon className="w-7 h-7 text-saffron" />
                   </div>
                   <div className="mt-6">
-                    <span className="text-sm font-medium tracking-wider uppercase text-saffron">
+                    <span className="text-sm font-[family-name:var(--font-sanskrit)] tracking-wider uppercase text-saffron">
                       {value.sanskrit}
                     </span>
                     <h3 className="mt-1 font-heading text-xl font-semibold text-text-primary">
