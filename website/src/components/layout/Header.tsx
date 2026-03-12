@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
@@ -219,9 +220,17 @@ export default function Header() {
           {/* ---- Logo ---- */}
           <Link
             href="/"
-            className="font-heading text-2xl font-bold tracking-tight text-text-primary sm:text-[1.65rem]"
+            className="flex items-center gap-2.5 font-heading text-2xl font-bold tracking-tight text-text-primary sm:text-[1.65rem]"
           >
-            <span className="text-saffron">Jnana</span>shakti
+            <Image
+              src="/images/logo.jpeg"
+              alt="Jnanashakti Ashram"
+              width={40}
+              height={40}
+              className="h-9 w-9 rounded-full object-cover sm:h-10 sm:w-10"
+              priority
+            />
+            <span><span className="text-saffron">Jnana</span>shakti</span>
           </Link>
 
           {/* ---- Desktop nav ---- */}
@@ -291,7 +300,7 @@ export default function Header() {
 
       {/* ---- Mobile full-screen overlay (outside header to avoid sticky stacking context) ---- */}
       <div
-        className={`fixed inset-0 z-[100] bg-[#1A1A2E] transition-all duration-300 lg:hidden ${
+        className={`fixed inset-0 z-[100] bg-maroon transition-all duration-300 lg:hidden ${
           mobileOpen
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"
@@ -302,9 +311,16 @@ export default function Header() {
           <Link
             href="/"
             onClick={closeMobile}
-            className="font-heading text-2xl font-bold tracking-tight text-warm-white"
+            className="flex items-center gap-2.5 font-heading text-2xl font-bold tracking-tight text-warm-white"
           >
-            <span className="text-saffron">Jnana</span>shakti
+            <Image
+              src="/images/logo.jpeg"
+              alt="Jnanashakti Ashram"
+              width={40}
+              height={40}
+              className="h-9 w-9 rounded-full object-cover sm:h-10 sm:w-10"
+            />
+            <span><span className="text-saffron">Jnana</span>shakti</span>
           </Link>
           <button
             onClick={closeMobile}

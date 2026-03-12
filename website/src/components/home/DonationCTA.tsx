@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function DonationCTA() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-saffron via-saffron-dark to-earth">
+    <section className="relative overflow-hidden bg-gradient-to-br from-earth via-maroon to-saffron-dark">
       {/* Subtle background texture */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.04]" aria-hidden="true">
         <div className="absolute inset-0" style={{

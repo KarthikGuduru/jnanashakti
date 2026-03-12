@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Youtube, Mail, Phone, MapPin } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
@@ -39,7 +40,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-text-primary text-warm-white/80">
+    <footer className="bg-maroon text-warm-white/80">
       {/* ---- Main grid ---- */}
       <div className="mx-auto max-w-7xl px-4 pt-16 pb-10 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
@@ -47,9 +48,16 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <Link
               href="/"
-              className="inline-block font-heading text-2xl font-bold tracking-tight text-warm-white"
+              className="inline-flex items-center gap-2.5 font-heading text-2xl font-bold tracking-tight text-warm-white"
             >
-              <span className="text-saffron">Jnana</span>shakti
+              <Image
+                src="/images/logo.jpeg"
+                alt="Jnanashakti Ashram"
+                width={40}
+                height={40}
+                className="h-9 w-9 rounded-full object-cover sm:h-10 sm:w-10"
+              />
+              <span><span className="text-saffron">Jnana</span>shakti</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-warm-white/60">
               Jnanashakti Ashram is a spiritual sanctuary dedicated to the

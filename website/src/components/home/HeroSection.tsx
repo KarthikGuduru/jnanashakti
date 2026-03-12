@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-saffron-dark via-saffron to-earth">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-maroon via-earth to-saffron-dark">
       {/* Decorative lotus / Om pattern */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         {/* Large lotus-like radial behind the text */}
