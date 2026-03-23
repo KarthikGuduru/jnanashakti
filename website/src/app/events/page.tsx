@@ -79,18 +79,19 @@ export default function EventsPage() {
             Programs &amp; Events
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-white/85 sm:text-xl">
-            FOWAI Forum — First Residential Retreat at{" "}
-            <span className="font-[family-name:var(--font-sanskrit)]">Jnana Shakti</span>
+            Explore retreats, workshops, and{" "}
+            <span className="font-[family-name:var(--font-sanskrit)]">satsang</span> sessions
+            at <span className="font-[family-name:var(--font-sanskrit)]">Jnana Shakti</span> Ashram
           </p>
         </div>
       </section>
 
-      {/* ── Retreat overview ── */}
       <section className="section-padding">
         <div className="mx-auto max-w-5xl px-4">
-          <div className="rounded-2xl border border-warm-border bg-warm-cream p-6 sm:p-10 text-center">
+          {/* ── FOWAI Retreat section heading ── */}
+          <div className="text-center">
             <p className="text-xs font-bold uppercase tracking-widest text-saffron">
-              FOWAI Forum
+              FOWAI Forum — First Residential Retreat
             </p>
             <h2 className="mt-2 font-heading text-2xl font-bold text-text-primary sm:text-3xl">
               The Flame of Who am I?
