@@ -5,38 +5,29 @@ interface Event {
   id: string;
   date: { day: string; month: string };
   title: string;
+  speaker: string;
   description: string;
   location: string;
-  registrationHref: string;
 }
 
 const events: Event[] = [
   {
-    id: "fowai-residential-retreat",
+    id: "touching-the-infinite",
     date: { day: "07", month: "Apr" },
-    title: "FOWAI Forum — First Residential Retreat",
+    title: "Touching the Infinite — Bhooma-vidyā",
+    speaker: "Swami Chidananda",
     description:
-      "A residential retreat featuring 'Touching the Infinite — Bhooma-vidyā' by Swami Chidananda and 'The Joy of Freedom — Jeevanmukti' by Swami Abhishek Chaitanya Giri. Limited to 15 persons. ₹1800 per person.",
+      "An exploration of Bhooma-vidyā from the Chāndogya Upanishad — the teaching of the Infinite. Part of the FOWAI Forum First Residential Retreat.",
     location: "Jnana Shakti Ashram, Sudhagad, Raigad",
-    registrationHref: "/events/fowai-residential-retreat",
   },
   {
-    id: "satsang-series",
-    date: { day: "22", month: "Apr" },
-    title: "Monthly Satsang & Discourse",
+    id: "the-joy-of-freedom",
+    date: { day: "08", month: "Apr" },
+    title: "The Joy of Freedom — Jeevanmukti",
+    speaker: "Swami Abhishek Chaitanya Giri",
     description:
-      "An evening of devotional chanting, scriptural discourse, and open dialogue exploring the essence of dharma in daily life.",
-    location: "Community Hall, Bengaluru",
-    registrationHref: "/events/satsang-series",
-  },
-  {
-    id: "youth-workshop",
-    date: { day: "05", month: "May" },
-    title: "Youth Values Workshop",
-    description:
-      "An interactive workshop for young adults on integrating ancient Indian values with modern career and personal growth.",
-    location: "Jnanashakti Ashram, Coimbatore",
-    registrationHref: "/events/youth-workshop",
+      "A discourse on Jeevanmukti — liberation while living. Discover how self-knowledge transforms daily life into freedom, clarity, and joy.",
+    location: "Jnana Shakti Ashram, Sudhagad, Raigad",
   },
 ];
 
@@ -50,10 +41,14 @@ export default function UpcomingEvents() {
             Upcoming Programs
           </h2>
           <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-saffron" />
+          <p className="mx-auto mt-4 max-w-xl text-sm text-text-muted">
+            FOWAI Forum — First Residential Retreat at Jnana Shakti (Apr 7–8, 2026).
+            Limited to 15 persons. ₹1,800 per person.
+          </p>
         </div>
 
         {/* Event cards */}
-        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-8 sm:grid-cols-2 max-w-4xl mx-auto">
           {events.map((event) => (
             <article
               key={event.id}
@@ -74,6 +69,9 @@ export default function UpcomingEvents() {
                   <h3 className="font-heading text-lg font-semibold text-text-primary leading-snug">
                     {event.title}
                   </h3>
+                  <p className="mt-1 text-sm font-medium text-earth">
+                    {event.speaker}
+                  </p>
                   <div className="mt-1.5 flex items-center gap-1 text-sm text-text-muted">
                     <MapPin className="h-3.5 w-3.5 shrink-0" />
                     <span className="truncate">{event.location}</span>
@@ -91,7 +89,7 @@ export default function UpcomingEvents() {
               {/* Register link */}
               <div className="px-6 pb-6 pt-2">
                 <Link
-                  href={event.registrationHref}
+                  href="/events#register"
                   className="inline-flex items-center gap-1.5 text-sm font-semibold text-saffron transition-colors hover:text-saffron-dark"
                 >
                   Register
