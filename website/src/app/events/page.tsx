@@ -88,7 +88,8 @@ export default function EventsPage() {
 
       <section className="section-padding">
         <div className="mx-auto max-w-5xl px-4">
-          {/* ── FOWAI Retreat section heading ── */}
+          {/* ── FOWAI Retreat block ── */}
+          <div className="rounded-2xl border border-warm-border bg-warm-cream/50 p-6 sm:p-10">
           <div className="text-center">
             <p className="text-xs font-bold uppercase tracking-widest text-saffron">
               FOWAI Forum — First Residential Retreat
@@ -197,6 +198,7 @@ export default function EventsPage() {
               Show Interest
               <ArrowRight className="h-4 w-4" />
             </button>
+          </div>
           </div>
 
           {/* ── How to Pay ── */}
