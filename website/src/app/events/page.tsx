@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import Image from "next/image";
-import { MapPin, Calendar, Clock, Users, Phone, IndianRupee, ArrowRight, CheckCircle } from "lucide-react";
+import { MapPin, Calendar, Clock, Users, Phone, IndianRupee, ArrowRight, Banknote, Building2 } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
 /*  Types & Data                                                       */
@@ -55,20 +55,10 @@ const EVENTS: EventItem[] = [
 /* ------------------------------------------------------------------ */
 
 export default function EventsPage() {
-  const formRef = useRef<HTMLDivElement>(null);
-  const [selectedEvent, setSelectedEvent] = useState("");
-  const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
+  const payRef = useRef<HTMLDivElement>(null);
 
-  function scrollToForm(eventTitle: string) {
-    setSelectedEvent(eventTitle);
-    setSubmitted(false);
-    formRef.current?.scrollIntoView({ behavior: "smooth" });
-  }
-
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setSubmitted(true);
+  function scrollToPayment() {
+    payRef.current?.scrollIntoView({ behavior: "smooth" });
   }
 
   return (
@@ -208,10 +198,10 @@ export default function EventsPage() {
 
                   {/* Register button */}
                   <button
-                    onClick={() => scrollToForm(event.title)}
+                    onClick={scrollToPayment}
                     className="mt-5 inline-flex w-full items-center justify-center gap-1.5 rounded-full border border-saffron py-2.5 text-sm font-semibold text-saffron transition-all hover:bg-saffron hover:text-white"
                   >
-                    Register
+                    Register &amp; Pay
                     <ArrowRight className="h-3.5 w-3.5" />
                   </button>
                 </div>
@@ -219,129 +209,75 @@ export default function EventsPage() {
             ))}
           </div>
 
-          {/* ── Registration Form ── */}
-          <div ref={formRef} id="register" className="mt-14 scroll-mt-24 rounded-2xl border border-warm-border bg-warm-cream p-8 sm:p-10">
+          {/* ── How to Pay ── */}
+          <div ref={payRef} id="register" className="mt-14 scroll-mt-24 rounded-2xl border border-warm-border bg-warm-cream p-8 sm:p-10">
             <h2 className="font-heading text-2xl font-bold text-text-primary text-center">
-              Register for the Retreat
+              How to Pay ₹1,800
             </h2>
             <p className="mx-auto mt-2 max-w-lg text-sm text-text-muted text-center">
-              Fill in your details below and we will get back to you to confirm your registration.
-              Accommodation is limited to 15 persons — first come, first served.
+              The retreat donation of ₹1,800 per person is inclusive of stay and food.
+              You can pay using either of the two options below.
             </p>
 
-            {submitted ? (
-              <div className="mt-8 flex flex-col items-center gap-3 py-8">
-                <CheckCircle className="h-12 w-12 text-green-600" />
-                <h3 className="font-heading text-xl font-semibold text-text-primary">
-                  Thank you for registering!
-                </h3>
-                <p className="max-w-md text-center text-sm text-text-muted">
-                  We have received your registration for <strong>{selectedEvent}</strong>.
-                  Our team will contact you shortly to confirm availability and share further details.
-                </p>
-                <p className="text-sm text-text-muted">
-                  For queries, call{" "}
-                  <a href="tel:+917715933334" className="font-semibold text-saffron hover:text-saffron-dark">+91 77159 33334</a>
-                  {" "}or{" "}
-                  <a href="tel:+919373324070" className="font-semibold text-saffron hover:text-saffron-dark">+91 93733 24070</a>
+            <div className="mx-auto mt-8 grid max-w-3xl gap-6 sm:grid-cols-2">
+              {/* Option 1 — Cheque */}
+              <div className="rounded-xl border border-warm-border bg-surface p-6">
+                <div className="flex items-center gap-2">
+                  <Banknote className="h-5 w-5 text-saffron" />
+                  <h3 className="font-heading text-lg font-semibold text-text-primary">
+                    Option 1 — Cheque
+                  </h3>
+                </div>
+                <p className="mt-3 text-sm leading-relaxed text-text-muted">
+                  Write a cheque in favour of <strong className="text-text-primary">FOWAI FORUM</strong> and
+                  hand it over to us when you come.
                 </p>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="mx-auto mt-8 grid max-w-xl gap-5">
-                {/* Event selection */}
-                <div>
-                  <label htmlFor="event" className="block text-sm font-medium text-text-primary">
-                    Select Event <span className="text-red-500">*</span>
-                  </label>
-                  <select
-                    id="event"
-                    required
-                    value={selectedEvent}
-                    onChange={(e) => setSelectedEvent(e.target.value)}
-                    className="mt-1.5 w-full rounded-lg border border-warm-border bg-surface px-4 py-2.5 text-sm text-text-primary focus:border-saffron focus:outline-none focus:ring-1 focus:ring-saffron"
-                  >
-                    <option value="">Choose an event…</option>
-                    {EVENTS.map((ev) => (
-                      <option key={ev.id} value={ev.title}>
-                        {ev.dateLabel} — {ev.title} ({ev.speaker})
-                      </option>
-                    ))}
-                    <option value="Both events (Full Retreat)">Both events (Full Retreat, Apr 7–8)</option>
-                  </select>
-                </div>
 
-                {/* Name */}
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-text-primary">
-                    Full Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    id="name"
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="mt-1.5 w-full rounded-lg border border-warm-border bg-surface px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted/50 focus:border-saffron focus:outline-none focus:ring-1 focus:ring-saffron"
-                    placeholder="Your full name"
-                  />
+              {/* Option 2 — NEFT */}
+              <div className="rounded-xl border border-warm-border bg-surface p-6">
+                <div className="flex items-center gap-2">
+                  <Building2 className="h-5 w-5 text-saffron" />
+                  <h3 className="font-heading text-lg font-semibold text-text-primary">
+                    Option 2 — NEFT
+                  </h3>
                 </div>
+                <dl className="mt-3 space-y-2 text-sm">
+                  <div className="flex justify-between">
+                    <dt className="text-text-muted">Bank</dt>
+                    <dd className="font-medium text-text-primary">HDFC Bank</dd>
+                  </div>
+                  <div className="flex justify-between">
+                    <dt className="text-text-muted">Branch</dt>
+                    <dd className="font-medium text-text-primary">Vishal Hall, Andheri East, Mumbai</dd>
+                  </div>
+                  <div className="flex justify-between">
+                    <dt className="text-text-muted">Account holder</dt>
+                    <dd className="font-medium text-text-primary">FOWAI FORUM</dd>
+                  </div>
+                  <div className="flex justify-between">
+                    <dt className="text-text-muted">IFSC</dt>
+                    <dd className="font-medium text-text-primary">HDFC0000086</dd>
+                  </div>
+                  <div className="flex justify-between">
+                    <dt className="text-text-muted">Type</dt>
+                    <dd className="font-medium text-text-primary">Savings Bank</dd>
+                  </div>
+                  <div className="flex justify-between">
+                    <dt className="text-text-muted">Account no.</dt>
+                    <dd className="font-medium text-text-primary">50100 24494 2248</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
 
-                {/* Email */}
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-text-primary">
-                    Email <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="mt-1.5 w-full rounded-lg border border-warm-border bg-surface px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted/50 focus:border-saffron focus:outline-none focus:ring-1 focus:ring-saffron"
-                    placeholder="you@example.com"
-                  />
-                </div>
-
-                {/* Phone */}
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-text-primary">
-                    Phone Number <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    id="phone"
-                    type="tel"
-                    required
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="mt-1.5 w-full rounded-lg border border-warm-border bg-surface px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted/50 focus:border-saffron focus:outline-none focus:ring-1 focus:ring-saffron"
-                    placeholder="+91 XXXXX XXXXX"
-                  />
-                </div>
-
-                {/* Message */}
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-text-primary">
-                    Message (optional)
-                  </label>
-                  <textarea
-                    id="message"
-                    rows={3}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="mt-1.5 w-full rounded-lg border border-warm-border bg-surface px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted/50 focus:border-saffron focus:outline-none focus:ring-1 focus:ring-saffron resize-none"
-                    placeholder="Any dietary requirements, travel questions, etc."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-saffron px-8 py-3 text-sm font-semibold text-white transition-all hover:bg-saffron-dark focus:outline-none focus:ring-2 focus:ring-saffron focus:ring-offset-2"
-                >
-                  Submit Registration
-                  <ArrowRight className="h-4 w-4" />
-                </button>
-              </form>
-            )}
+            {/* Note for non-Indian citizens */}
+            <p className="mx-auto mt-6 max-w-lg text-center text-sm text-text-muted">
+              The above is for Indian citizens. Others may please contact us at{" "}
+              <a href="tel:+919373324070" className="font-semibold text-saffron hover:text-saffron-dark">+91 93733 24070</a>
+              {" "}or{" "}
+              <a href="tel:+917715933334" className="font-semibold text-saffron hover:text-saffron-dark">+91 77159 33334</a>.
+            </p>
           </div>
         </div>
       </section>
