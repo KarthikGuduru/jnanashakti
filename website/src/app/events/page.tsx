@@ -182,15 +182,6 @@ export default function EventsPage() {
                       <span>{event.location}</span>
                     </div>
                   </div>
-
-                  {/* Show Interest button */}
-                  <button
-                    onClick={() => { setShowPayment(true); scrollToForm(); }}
-                    className="mt-5 inline-flex w-full items-center justify-center gap-1.5 rounded-full border border-saffron py-2.5 text-sm font-semibold text-saffron transition-all hover:bg-saffron hover:text-white"
-                  >
-                    Show Interest
-                    <ArrowRight className="h-3.5 w-3.5" />
-                  </button>
                 </div>
               </article>
             ))}
