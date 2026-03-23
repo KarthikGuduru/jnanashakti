@@ -24,6 +24,17 @@ interface EventItem {
 
 const EVENTS: EventItem[] = [
   {
+    id: "fowai-residential-retreat",
+    title: "FOWAI Forum — First Residential Retreat",
+    description:
+      "A residential retreat at Jnana Shakti Ashram featuring 'Touching the Infinite — Bhooma-vidyā' by Swami Chidananda and 'The Joy of Freedom — Jeevanmukti' by Swami Abhishek Chaitanya Giri. Accommodation limited to 15 persons (first come, first served). Retreat donation: ₹1800 per person. Contact: +91 77159 33334 / +91 93733 24070.",
+    dateLabel: "Apr 7 - 8, 2026 (Tue–Wed)",
+    month: "APR",
+    day: "07",
+    location: "Jnana Shakti Ashram, Village Vave Tarfe Asare, Sudhagad, Raigad, Maharashtra",
+    type: "Retreats",
+  },
+  {
     id: "meditation-retreat",
     title: "Meditation Retreat",
     description:

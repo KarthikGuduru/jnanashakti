@@ -12,13 +12,13 @@ interface Event {
 
 const events: Event[] = [
   {
-    id: "meditation-retreat",
-    date: { day: "15", month: "Apr" },
-    title: "Weekend Meditation Retreat",
+    id: "fowai-residential-retreat",
+    date: { day: "07", month: "Apr" },
+    title: "FOWAI Forum — First Residential Retreat",
     description:
-      "A two-day silent retreat immersing participants in guided meditation, prānāyāma, and contemplative practices rooted in Vedāntic teachings.",
-    location: "Jnanashakti Ashram, Coimbatore",
-    registrationHref: "/events/meditation-retreat",
+      "A residential retreat featuring 'Touching the Infinite — Bhooma-vidyā' by Swami Chidananda and 'The Joy of Freedom — Jeevanmukti' by Swami Abhishek Chaitanya Giri. Limited to 15 persons. ₹1800 per person.",
+    location: "Jnana Shakti Ashram, Sudhagad, Raigad",
+    registrationHref: "/events/fowai-residential-retreat",
   },
   {
     id: "satsang-series",
