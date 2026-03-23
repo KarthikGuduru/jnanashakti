@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { MapPin, Calendar, Clock, Users, Phone, IndianRupee, ArrowRight, CheckCircle } from "lucide-react";
+import { MapPin, Calendar, Clock, Users, Phone, IndianRupee, ArrowRight, CheckCircle, Banknote, Building2 } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
 /*  Types & Data                                                       */
@@ -295,6 +295,77 @@ export default function EventsPage() {
                 </button>
               </form>
             )}
+          </div>
+
+          {/* ── How to Pay ── */}
+          <div className="mt-10 rounded-2xl border border-warm-border bg-surface p-8 sm:p-10">
+            <h2 className="font-heading text-2xl font-bold text-text-primary text-center">
+              How to Pay ₹1,800
+            </h2>
+            <p className="mx-auto mt-2 max-w-lg text-sm text-text-muted text-center">
+              A single payment of ₹1,800 per person covers both days, stay and food.
+              You can pay using either of the two options below.
+            </p>
+
+            <div className="mx-auto mt-8 grid max-w-3xl gap-6 sm:grid-cols-2">
+              {/* Option 1 — Cheque */}
+              <div className="rounded-xl border border-warm-border bg-warm-cream p-6">
+                <div className="flex items-center gap-2">
+                  <Banknote className="h-5 w-5 text-saffron" />
+                  <h3 className="font-heading text-lg font-semibold text-text-primary">
+                    Option 1 — Cheque
+                  </h3>
+                </div>
+                <p className="mt-3 text-sm leading-relaxed text-text-muted">
+                  Write a cheque in favour of <strong className="text-text-primary">FOWAI FORUM</strong> and
+                  hand it over to us when you come.
+                </p>
+              </div>
+
+              {/* Option 2 — NEFT */}
+              <div className="rounded-xl border border-warm-border bg-warm-cream p-6">
+                <div className="flex items-center gap-2">
+                  <Building2 className="h-5 w-5 text-saffron" />
+                  <h3 className="font-heading text-lg font-semibold text-text-primary">
+                    Option 2 — NEFT
+                  </h3>
+                </div>
+                <dl className="mt-3 space-y-2 text-sm">
+                  <div className="flex justify-between">
+                    <dt className="text-text-muted">Bank</dt>
+                    <dd className="font-medium text-text-primary">HDFC Bank</dd>
+                  </div>
+                  <div className="flex justify-between">
+                    <dt className="text-text-muted">Branch</dt>
+                    <dd className="font-medium text-text-primary">Vishal Hall, Andheri East, Mumbai</dd>
+                  </div>
+                  <div className="flex justify-between">
+                    <dt className="text-text-muted">Account holder</dt>
+                    <dd className="font-medium text-text-primary">FOWAI FORUM</dd>
+                  </div>
+                  <div className="flex justify-between">
+                    <dt className="text-text-muted">IFSC</dt>
+                    <dd className="font-medium text-text-primary">HDFC0000086</dd>
+                  </div>
+                  <div className="flex justify-between">
+                    <dt className="text-text-muted">Type</dt>
+                    <dd className="font-medium text-text-primary">Savings Bank</dd>
+                  </div>
+                  <div className="flex justify-between">
+                    <dt className="text-text-muted">Account no.</dt>
+                    <dd className="font-medium text-text-primary">50100 24494 2248</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+
+            {/* Note for non-Indian citizens */}
+            <p className="mx-auto mt-6 max-w-lg text-center text-sm text-text-muted">
+              The above is for Indian citizens. Others may please contact us at{" "}
+              <a href="tel:+919373324070" className="font-semibold text-saffron hover:text-saffron-dark">+91 93733 24070</a>
+              {" "}or{" "}
+              <a href="tel:+917715933334" className="font-semibold text-saffron hover:text-saffron-dark">+91 77159 33334</a>.
+            </p>
           </div>
         </div>
       </section>
