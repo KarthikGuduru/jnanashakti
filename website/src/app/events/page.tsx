@@ -104,7 +104,7 @@ export default function EventsPage() {
               </span>
               <span className="flex items-center gap-1.5">
                 <IndianRupee className="h-4 w-4 text-saffron" />
-                ₹1,800 per person
+                ₹1,800 per person (covers both days, stay &amp; food)
               </span>
               <span className="flex items-center gap-1.5">
                 <Users className="h-4 w-4 text-saffron" />
@@ -200,7 +200,8 @@ export default function EventsPage() {
             </h2>
             <p className="mx-auto mt-2 max-w-lg text-sm text-text-muted text-center">
               Fill in your details below and our team will reach out with confirmation
-              and payment details. Accommodation is limited to 15 persons — first come, first served.
+              and payment details. A single donation of ₹1,800 covers both days including
+              stay and food. Accommodation is limited to 15 persons — first come, first served.
             </p>
 
             {submitted ? (

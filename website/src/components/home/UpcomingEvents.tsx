@@ -43,7 +43,7 @@ export default function UpcomingEvents() {
           <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-saffron" />
           <p className="mx-auto mt-4 max-w-xl text-sm text-text-muted">
             FOWAI Forum — First Residential Retreat at Jnana Shakti (Apr 7–8, 2026).
-            Limited to 15 persons. ₹1,800 per person.
+            Limited to 15 persons. ₹1,800 per person covers both days, stay &amp; food.
           </p>
         </div>
 
