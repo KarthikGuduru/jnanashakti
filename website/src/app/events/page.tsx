@@ -57,9 +57,12 @@ export default function EventsPage() {
   const formRef = useRef<HTMLDivElement>(null);
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [showPayment, setShowPayment] = useState(false);
 
   function scrollToForm() {
-    formRef.current?.scrollIntoView({ behavior: "smooth" });
+    setTimeout(() => {
+      formRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
   }
 
   function handleSubmit(e: React.FormEvent) {
@@ -182,7 +185,7 @@ export default function EventsPage() {
 
                   {/* Show Interest button */}
                   <button
-                    onClick={scrollToForm}
+                    onClick={() => { setShowPayment(true); scrollToForm(); }}
                     className="mt-5 inline-flex w-full items-center justify-center gap-1.5 rounded-full border border-saffron py-2.5 text-sm font-semibold text-saffron transition-all hover:bg-saffron hover:text-white"
                   >
                     Show Interest
@@ -193,108 +196,15 @@ export default function EventsPage() {
             ))}
           </div>
 
-          {/* ── Show Interest Form ── */}
-          <div ref={formRef} id="register" className="mt-14 scroll-mt-24 rounded-2xl border border-warm-border bg-warm-cream p-8 sm:p-10">
-            <h2 className="font-heading text-2xl font-bold text-text-primary text-center">
+          {/* ── Show Interest toggle button ── */}
+          <div className="mt-10 text-center">
+            <button
+              onClick={() => { setShowPayment(true); scrollToForm(); }}
+              className="inline-flex items-center gap-2 rounded-full bg-saffron px-8 py-3 text-sm font-semibold text-white transition-all hover:bg-saffron-dark focus:outline-none focus:ring-2 focus:ring-saffron focus:ring-offset-2"
+            >
               Show Interest
-            </h2>
-            <p className="mx-auto mt-2 max-w-lg text-sm text-text-muted text-center">
-              Fill in your details below and our team will reach out with confirmation
-              and payment details. A single donation of ₹1,800 covers both days including
-              stay and food. Accommodation is limited to 15 persons — first come, first served.
-            </p>
-
-            {submitted ? (
-              <div className="mt-8 flex flex-col items-center gap-3 py-8">
-                <CheckCircle className="h-12 w-12 text-green-600" />
-                <h3 className="font-heading text-xl font-semibold text-text-primary">
-                  Thank you for your interest!
-                </h3>
-                <p className="max-w-md text-center text-sm text-text-muted">
-                  Our team will contact you shortly to confirm availability and share
-                  payment details.
-                </p>
-                <p className="text-sm text-text-muted">
-                  For queries, call{" "}
-                  <a href="tel:+917715933334" className="font-semibold text-saffron hover:text-saffron-dark">+91 77159 33334</a>
-                  {" "}or{" "}
-                  <a href="tel:+919373324070" className="font-semibold text-saffron hover:text-saffron-dark">+91 93733 24070</a>
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="mx-auto mt-8 grid max-w-xl gap-5">
-                {/* Name */}
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-text-primary">
-                    Full Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    id="name"
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="mt-1.5 w-full rounded-lg border border-warm-border bg-surface px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted/50 focus:border-saffron focus:outline-none focus:ring-1 focus:ring-saffron"
-                    placeholder="Your full name"
-                  />
-                </div>
-
-                {/* Email */}
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-text-primary">
-                    Email <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="mt-1.5 w-full rounded-lg border border-warm-border bg-surface px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted/50 focus:border-saffron focus:outline-none focus:ring-1 focus:ring-saffron"
-                    placeholder="you@example.com"
-                  />
-                </div>
-
-                {/* Phone */}
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-text-primary">
-                    Phone Number <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    id="phone"
-                    type="tel"
-                    required
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="mt-1.5 w-full rounded-lg border border-warm-border bg-surface px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted/50 focus:border-saffron focus:outline-none focus:ring-1 focus:ring-saffron"
-                    placeholder="+91 XXXXX XXXXX"
-                  />
-                </div>
-
-                {/* Message */}
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-text-primary">
-                    Message (optional)
-                  </label>
-                  <textarea
-                    id="message"
-                    rows={3}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="mt-1.5 w-full rounded-lg border border-warm-border bg-surface px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted/50 focus:border-saffron focus:outline-none focus:ring-1 focus:ring-saffron resize-none"
-                    placeholder="Any dietary requirements, travel questions, etc."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-saffron px-8 py-3 text-sm font-semibold text-white transition-all hover:bg-saffron-dark focus:outline-none focus:ring-2 focus:ring-saffron focus:ring-offset-2"
-                >
-                  Submit
-                  <ArrowRight className="h-4 w-4" />
-                </button>
-              </form>
-            )}
+              <ArrowRight className="h-4 w-4" />
+            </button>
           </div>
 
           {/* ── How to Pay ── */}
@@ -367,6 +277,102 @@ export default function EventsPage() {
               <a href="tel:+917715933334" className="font-semibold text-saffron hover:text-saffron-dark">+91 77159 33334</a>.
             </p>
           </div>
+
+          {/* ── Show Interest Form (hidden until button clicked) ── */}
+          {showPayment && (
+            <div ref={formRef} id="register" className="mt-10 scroll-mt-24 rounded-2xl border border-warm-border bg-warm-cream p-8 sm:p-10">
+              <h2 className="font-heading text-2xl font-bold text-text-primary text-center">
+                Show Interest
+              </h2>
+              <p className="mx-auto mt-2 max-w-lg text-sm text-text-muted text-center">
+                Fill in your details below and our team will reach out to confirm your spot.
+                Accommodation is limited to 15 persons — first come, first served.
+              </p>
+
+              {submitted ? (
+                <div className="mt-8 flex flex-col items-center gap-3 py-8">
+                  <CheckCircle className="h-12 w-12 text-green-600" />
+                  <h3 className="font-heading text-xl font-semibold text-text-primary">
+                    Thank you for your interest!
+                  </h3>
+                  <p className="max-w-md text-center text-sm text-text-muted">
+                    Our team will contact you shortly to confirm availability.
+                  </p>
+                  <p className="text-sm text-text-muted">
+                    For queries, call{" "}
+                    <a href="tel:+917715933334" className="font-semibold text-saffron hover:text-saffron-dark">+91 77159 33334</a>
+                    {" "}or{" "}
+                    <a href="tel:+919373324070" className="font-semibold text-saffron hover:text-saffron-dark">+91 93733 24070</a>
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="mx-auto mt-8 grid max-w-xl gap-5">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-text-primary">
+                      Full Name <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      id="name"
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="mt-1.5 w-full rounded-lg border border-warm-border bg-surface px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted/50 focus:border-saffron focus:outline-none focus:ring-1 focus:ring-saffron"
+                      placeholder="Your full name"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-text-primary">
+                      Email <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      id="email"
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="mt-1.5 w-full rounded-lg border border-warm-border bg-surface px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted/50 focus:border-saffron focus:outline-none focus:ring-1 focus:ring-saffron"
+                      placeholder="you@example.com"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-text-primary">
+                      Phone Number <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      id="phone"
+                      type="tel"
+                      required
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="mt-1.5 w-full rounded-lg border border-warm-border bg-surface px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted/50 focus:border-saffron focus:outline-none focus:ring-1 focus:ring-saffron"
+                      placeholder="+91 XXXXX XXXXX"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-text-primary">
+                      Message (optional)
+                    </label>
+                    <textarea
+                      id="message"
+                      rows={3}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      className="mt-1.5 w-full rounded-lg border border-warm-border bg-surface px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted/50 focus:border-saffron focus:outline-none focus:ring-1 focus:ring-saffron resize-none"
+                      placeholder="Any dietary requirements, travel questions, etc."
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-saffron px-8 py-3 text-sm font-semibold text-white transition-all hover:bg-saffron-dark focus:outline-none focus:ring-2 focus:ring-saffron focus:ring-offset-2"
+                  >
+                    Submit
+                    <ArrowRight className="h-4 w-4" />
+                  </button>
+                </form>
+              )}
+            </div>
+          )}
         </div>
       </section>
     </main>
