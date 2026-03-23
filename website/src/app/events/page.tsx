@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Image from "next/image";
 import { MapPin, Calendar, Clock, Users, Phone, IndianRupee, ArrowRight, CheckCircle } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
@@ -124,6 +125,28 @@ export default function EventsPage() {
                 <Phone className="h-4 w-4 text-saffron" />
                 +91 93733 24070
               </span>
+            </div>
+
+            {/* Posters */}
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div className="overflow-hidden rounded-xl border border-warm-border shadow-sm">
+                <Image
+                  src="/images/fowai-retreat-poster.jpg"
+                  alt="FOWAI Forum First Residential Retreat poster — Touching the Infinite by Swami Chidananda and The Joy of Freedom by Swami Abhishek Chaitanya Giri, April 7–8, 2026"
+                  width={600}
+                  height={800}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+              <div className="overflow-hidden rounded-xl border border-warm-border shadow-sm">
+                <Image
+                  src="/images/fowai-retreat-details.jpg"
+                  alt="FOWAI Forum retreat details — Jnana Shakti Ashram address, group photo, and retreat donation information"
+                  width={600}
+                  height={800}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
             </div>
           </div>
 
