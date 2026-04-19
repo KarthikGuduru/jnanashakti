@@ -124,7 +124,7 @@ export default function StayRequestPage() {
                     which includes morning and evening meditation, satsang, and communal meals.
                   </p>
                   <p>
-                    Accommodation is simple and clean, reflecting the ashram's
+                    Accommodation is simple and clean, reflecting the ashram&apos;s
                     commitment to a life of simplicity. Stays are available for a
                     minimum of two nights.
                   </p>
