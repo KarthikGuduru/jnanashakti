@@ -43,7 +43,7 @@ const labelClasses = "block text-sm font-medium text-text-primary mb-1.5";
  * Web3Forms — free tier (250 submissions/month, email notifications).
  * Replace the access_key below with your own from https://web3forms.com
  */
-const WEB3FORMS_KEY = "03f67aff-7f5f-4e0a-915f-c968357bd7d7";
+const WEB3FORMS_KEY = "22e8d204-a25d-4fc1-b052-d421271d63c1";
 
 export default function StayRequestPage() {
   const [form, setForm] = useState<FormData>(initialFormData);

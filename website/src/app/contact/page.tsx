@@ -57,7 +57,7 @@ const LNG = 73.308;
  * Replace the access_key below with your own from https://web3forms.com
  * After signing up, you get an access key emailed to you in 30 seconds.
  */
-const WEB3FORMS_KEY = "03f67aff-7f5f-4e0a-915f-c968357bd7d7";
+const WEB3FORMS_KEY = "22e8d204-a25d-4fc1-b052-d421271d63c1";
 
 /* ------------------------------------------------------------------ */
 /*  Component                                                          */
