@@ -391,21 +391,6 @@ export default function MediaPage() {
                 ))}
               </div>
 
-              {/* Link to full archive */}
-              <div className="mt-10 text-center">
-                <a
-                  href={ARCHIVE_PAGE}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border-2 border-saffron px-8 py-3 text-sm font-semibold text-saffron transition-all hover:bg-saffron hover:text-white"
-                >
-                  Browse Full Collection on Internet Archive
-                  <ExternalLink size={16} />
-                </a>
-                <p className="mt-3 text-sm text-text-muted">
-                  Free, permanent hosting — no account needed to listen
-                </p>
-              </div>
             </div>
           )}
 
