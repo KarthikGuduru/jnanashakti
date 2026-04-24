@@ -46,11 +46,13 @@ const NAV_ITEMS: NavItem[] = [
     href: "/ashram",
     children: [
       { label: "About Shakti Ashram", href: "/ashram" },
+      { label: "Photo Gallery", href: "/gallery" },
       { label: "Request to Stay", href: "/ashram/stay" },
       { label: "Directions", href: "/ashram/directions" },
     ],
   },
   { label: "Events", href: "/events" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Store", href: "/store" },
   { label: "Donate", href: "/donate", highlight: true },
   { label: "Contact", href: "/contact" },
