@@ -25,6 +25,8 @@ interface GalleryItem {
   height: string;
   /** Path to the real image under /public */
   image: string;
+  /** Portrait-orientation photos use contain instead of cover so faces aren't cropped */
+  portrait?: boolean;
 }
 
 const GALLERY_ITEMS: GalleryItem[] = [
@@ -40,8 +42,9 @@ const GALLERY_ITEMS: GalleryItem[] = [
     caption:
       "Dr M Nagaraju, chief guest at the inauguration, speaking on 15 January 2026.",
     category: "events",
-    height: "h-56",
+    height: "h-[520px]",
     image: "/images/ashram/inauguration-dr-nagaraju.jpg",
+    portrait: true,
   },
   {
     title: "Āchārya Cottages",
@@ -101,8 +104,9 @@ const GALLERY_ITEMS: GalleryItem[] = [
     caption:
       "Guest of Honour Dr Vinayachandra Banavaty addressing the gathering.",
     category: "events",
-    height: "h-72",
+    height: "h-[520px]",
     image: "/images/ashram/dr-banavaty.jpg",
+    portrait: true,
   },
 ];
 
@@ -175,13 +179,19 @@ export default function GalleryPage() {
                   className="group mb-5 break-inside-avoid overflow-hidden rounded-2xl border border-warm-border bg-surface shadow-sm transition-all duration-300 hover:shadow-lg"
                 >
                   {/* Image */}
-                  <div className={`relative w-full ${item.height} overflow-hidden`}>
+                  <div
+                    className={`relative w-full ${item.height} overflow-hidden ${
+                      item.portrait ? "bg-warm-cream" : ""
+                    }`}
+                  >
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      className={`transition-transform duration-500 group-hover:scale-[1.03] ${
+                        item.portrait ? "object-contain" : "object-cover"
+                      }`}
                     />
                   </div>
 
