@@ -11,6 +11,7 @@ const QUICK_LINKS = [
   { label: "About Us", href: "/about" },
   { label: "Teachings", href: "/teachings" },
   { label: "Events", href: "/events" },
+  { label: "Photo Gallery", href: "/gallery" },
   { label: "Bookstore", href: "/store" },
   { label: "Donate", href: "/donate" },
   { label: "Contact", href: "/contact" },

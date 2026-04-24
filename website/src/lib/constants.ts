@@ -39,11 +39,13 @@ export const NAV_LINKS = [
     href: "/ashram",
     children: [
       { label: "About Shakti Ashram", href: "/ashram" },
+      { label: "Photo Gallery", href: "/gallery" },
       { label: "Request to Stay", href: "/ashram/stay" },
       { label: "Directions", href: "/ashram/directions" },
     ],
   },
   { label: "Events", href: "/events" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/contact" },
 ];
 
