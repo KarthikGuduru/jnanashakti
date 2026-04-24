@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display, Tiro_Devanagari_Sanskrit } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import LaunchBanner from "@/components/layout/LaunchBanner";
+import BackgroundMusic from "@/components/layout/BackgroundMusic";
 import "./globals.css";
 
 const inter = Inter({
@@ -60,9 +62,11 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} ${sanskrit.variable} font-[family-name:var(--font-body)] antialiased`}
       >
+        <LaunchBanner />
         <Header />
         <main className="min-h-[calc(100dvh-4rem)]">{children}</main>
         <Footer />
+        <BackgroundMusic />
       </body>
     </html>
   );
