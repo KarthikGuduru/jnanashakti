@@ -27,29 +27,29 @@ const travelModes = [
     icon: Plane,
     title: "By Air",
     lines: [
+      "Navi Mumbai International Airport (NMI) — the nearest airport",
       "Chhatrapati Shivaji Maharaj International Airport (Mumbai) — approx. 3 hours drive",
       "Pune International Airport — approx. 2.5 – 3 hours drive",
     ],
-    note: "Hire a taxi or use app-based cab services from either airport.",
+    note: "Hire a taxi or use app-based cab services from any of these airports.",
   },
   {
     icon: TrainFront,
     title: "By Train",
     lines: [
-      "Nearest major station: Pali (Konkan Railway) — approx. 11 km",
-      "Lonavala station — approx. 26 km",
-      "Pune Junction — approx. 53 km",
+      "Panvel Junction — a nearby major railway station",
+      "Karjat station — a nearby major railway station",
     ],
-    note: "Autos and local taxis are available from Pali station to the ashram.",
+    note: "Autos and local taxis are available from Panvel and Karjat stations to the āshram.",
   },
   {
     icon: Car,
     title: "By Road",
     lines: [
-      "From Pune: Take NH48 towards Mumbai, exit at Lonavala/Pali, follow signs to Sudhagad / Jambhulpada",
-      "From Mumbai: Take Mumbai-Pune Expressway, exit at Lonavala, head south towards Pali and Sudhagad",
+      "From Mumbai: Take the Mumbai–Pune Expressway and exit at Khopoli, then head south towards Pali and Sudhagad",
+      "From Pune: Take the Mumbai–Pune Expressway towards Mumbai and exit at Khopoli, then follow signs to Pali and Sudhagad / Jambhulpada",
     ],
-    note: "The route is scenic through the Sahyadri hills. Parking available at the ashram.",
+    note: "The route is scenic through the Sahyadri hills. Parking is available at the āshram.",
   },
 ];
 
@@ -160,9 +160,9 @@ export default function DirectionsPage() {
                       Distance
                     </h2>
                     <ul className="mt-2 space-y-1 text-sm text-text-muted">
-                      <li>~53 km west of Pune</li>
-                      <li>~11 km east of Pali</li>
-                      <li>~26 km south of Lonavala</li>
+                      <li>Expressway exit: Khopoli</li>
+                      <li>Nearest stations: Panvel, Karjat</li>
+                      <li>Nearest airport: Navi Mumbai (NMI)</li>
                       <li>&lt; 3 hrs from Mumbai / Pune airports</li>
                     </ul>
                   </div>
