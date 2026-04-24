@@ -23,7 +23,7 @@ export default function BackgroundMusic() {
     const audio = audioRef.current;
     if (!audio) return;
 
-    audio.volume = 0.22;
+    audio.volume = 0.11;
     audio.loop = true;
 
     // Respect a prior user preference stored in localStorage.
