@@ -2,20 +2,19 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Image as ImageIcon } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
 /* ------------------------------------------------------------------ */
 
-type Category = "all" | "ashram" | "events" | "satsang" | "nature";
+type Category = "all" | "ashram" | "events";
 
 const CATEGORIES: { key: Category; label: string }[] = [
   { key: "all", label: "All" },
   { key: "ashram", label: "Ashram" },
-  { key: "events", label: "Events" },
-  { key: "satsang", label: "Satsang" },
-  { key: "nature", label: "Nature" },
+  { key: "events", label: "Inauguration" },
 ];
 
 interface GalleryItem {
@@ -24,94 +23,86 @@ interface GalleryItem {
   category: Exclude<Category, "all">;
   /** Tailwind height class to create masonry-style variation */
   height: string;
-  /** Gradient for the placeholder */
-  gradient: string;
+  /** Path to the real image under /public */
+  image: string;
 }
 
 const GALLERY_ITEMS: GalleryItem[] = [
   {
-    title: "Main Meditation Hall",
-    caption: "The heart of Shakti Ashram -- where seekers gather for daily meditation",
+    title: "Meditation Hall",
+    caption: "The meditation hall at Jnāna Shakti Āshram, from outside.",
     category: "ashram",
     height: "h-72",
-    gradient: "from-saffron/15 to-earth/10",
+    image: "/images/ashram/meditation-hall-outside.jpg",
   },
   {
-    title: "Annual Retreat 2024",
-    caption: "Over 200 participants joined the week-long spiritual immersion programme",
+    title: "Chief Guest Address",
+    caption:
+      "Dr M Nagaraju, chief guest at the inauguration, speaking on 15 January 2026.",
     category: "events",
     height: "h-56",
-    gradient: "from-orange-accent/10 to-saffron/15",
+    image: "/images/ashram/inauguration-dr-nagaraju.jpg",
   },
   {
-    title: "Evening Satsang",
-    caption: "Swamiji addressing devotees during the evening satsang session",
-    category: "satsang",
+    title: "Āchārya Cottages",
+    caption: "The two Āchārya cottages on the āshram grounds.",
+    category: "ashram",
     height: "h-64",
-    gradient: "from-earth/10 to-saffron-light/15",
+    image: "/images/ashram/acharya-cottages.jpg",
   },
   {
-    title: "Ashram Garden Path",
-    caption: "The serene walkway lined with flowering trees and meditation benches",
-    category: "nature",
+    title: "Lighting the Lamp",
+    caption:
+      "Brni Vibha Chaitanya and Swami Advayaananda lighting the ceremonial lamp at the inauguration.",
+    category: "events",
     height: "h-80",
-    gradient: "from-green-100/50 to-saffron/5",
+    image: "/images/ashram/lamp-lighting.jpg",
   },
   {
-    title: "Temple Interior",
-    caption: "The beautifully adorned sanctum of the ashram temple",
+    title: "Meditation Hall Interior",
+    caption:
+      "The meditation hall from within — finishing touches still being given.",
     category: "ashram",
     height: "h-64",
-    gradient: "from-saffron/20 to-orange-accent/10",
+    image: "/images/ashram/meditation-hall-inside.jpg",
   },
   {
-    title: "Diwali Celebration",
-    caption: "The ashram grounds illuminated with thousands of lamps on Diwali night",
+    title: "Inaugural Gathering",
+    caption:
+      "A section of the participants gathered for the inauguration on 15 January 2026.",
     category: "events",
     height: "h-56",
-    gradient: "from-orange-accent/15 to-yellow-100/30",
+    image: "/images/ashram/inauguration-gathering.jpg",
   },
   {
-    title: "Morning Chanting",
-    caption: "Residents and visitors chanting Vedic hymns at the break of dawn",
-    category: "satsang",
+    title: "Residential Block",
+    caption:
+      "The block of ten rooms for visitors and retreat participants, with the āshram office.",
+    category: "ashram",
     height: "h-72",
-    gradient: "from-saffron/10 to-warm-cream",
+    image: "/images/ashram/rooms-block.jpg",
   },
   {
-    title: "Riverside View",
-    caption: "The peaceful river flowing beside the ashram, a place for contemplation",
-    category: "nature",
+    title: "Āshram Entrance",
+    caption: "The entrance to Jnāna Shakti Āshram on the inaugural day.",
+    category: "events",
     height: "h-56",
-    gradient: "from-blue-50 to-saffron/5",
+    image: "/images/ashram/ashram-entrance.jpg",
   },
   {
-    title: "Library & Study Hall",
-    caption: "A quiet space housing rare texts on Vedānta, Yoga, and Indian philosophy",
+    title: "Dining Hall & Kitchen",
+    caption: "The dining hall and kitchen serving the āshram community.",
     category: "ashram",
     height: "h-60",
-    gradient: "from-earth/8 to-warm-cream",
+    image: "/images/ashram/dining-hall.jpg",
   },
   {
-    title: "Guru Purnima 2024",
-    caption: "The sacred tradition of honouring the Guru on this auspicious day",
+    title: "Guest of Honour",
+    caption:
+      "Guest of Honour Dr Vinayachandra Banavaty addressing the gathering.",
     category: "events",
     height: "h-72",
-    gradient: "from-saffron/15 to-earth-light/10",
-  },
-  {
-    title: "Bhajan Evening",
-    caption: "Devotional singing under the open sky in the āshram courtyard",
-    category: "satsang",
-    height: "h-56",
-    gradient: "from-saffron-light/15 to-orange-accent/5",
-  },
-  {
-    title: "Sunrise over the Hills",
-    caption: "The first rays of sunlight painting the hills behind the ashram gold",
-    category: "nature",
-    height: "h-80",
-    gradient: "from-orange-accent/10 to-yellow-50/30",
+    image: "/images/ashram/dr-banavaty.jpg",
   },
 ];
 
@@ -147,8 +138,11 @@ export default function GalleryPage() {
               Photo Gallery
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-white/85 sm:text-xl">
-              Glimpses of life at <span className="font-[family-name:var(--font-sanskrit)]">Shakti Āshram</span> — moments of devotion, learning,
-              celebration, and the natural beauty that surrounds our spiritual home.
+              Glimpses of life at <span className="font-[family-name:var(--font-sanskrit)]">Jnāna Shakti Āshram</span> — the facilities, the
+              inauguration on 15 January 2026, and the community that gathers here.
+            </p>
+            <p className="mx-auto mt-3 max-w-2xl text-xs text-white/70">
+              Note: Finishing touches are still being given in several places; some of these photos will be replaced with better ones over the coming weeks.
             </p>
           </div>
         </section>
@@ -180,13 +174,14 @@ export default function GalleryPage() {
                   key={item.title}
                   className="group mb-5 break-inside-avoid overflow-hidden rounded-2xl border border-warm-border bg-surface shadow-sm transition-all duration-300 hover:shadow-lg"
                 >
-                  {/* Image placeholder */}
-                  <div
-                    className={`flex items-center justify-center bg-gradient-to-br ${item.gradient} ${item.height}`}
-                  >
-                    <ImageIcon
-                      size={36}
-                      className="text-warm-border/60 transition-colors group-hover:text-saffron/30"
+                  {/* Image */}
+                  <div className={`relative w-full ${item.height} overflow-hidden`}>
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
 

@@ -219,6 +219,94 @@ export default function AshramPage() {
         </div>
       </section>
 
+      {/* ── Facility Photos ── */}
+      <section className="section-padding">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="text-center">
+            <span className="inline-block text-sm font-medium tracking-widest uppercase text-saffron">
+              A Glimpse of the Āshram
+            </span>
+            <h2 className="mt-4 font-heading text-3xl font-bold text-text-primary sm:text-4xl">
+              Facility Photographs
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-text-muted">
+              Recent photographs of the āshram. Finishing touches are still
+              being given at several places — these images will be updated with
+              better photographs over the coming weeks.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                src: "/images/ashram/meditation-hall-outside.jpg",
+                title: "Meditation Hall",
+                caption: "The meditation hall from outside.",
+              },
+              {
+                src: "/images/ashram/meditation-hall-inside.jpg",
+                title: "Meditation Hall Interior",
+                caption: "The meditation hall from within.",
+              },
+              {
+                src: "/images/ashram/acharya-cottages.jpg",
+                title: "Āchārya Cottages",
+                caption: "The two Āchārya cottages on the grounds.",
+              },
+              {
+                src: "/images/ashram/rooms-block.jpg",
+                title: "Residential Block & Office",
+                caption:
+                  "Ten rooms for visitors and retreat participants, with the āshram office.",
+              },
+              {
+                src: "/images/ashram/dining-hall.jpg",
+                title: "Dining Hall & Kitchen",
+                caption: "Maitreyī — the dining hall and kitchen.",
+              },
+              {
+                src: "/images/ashram/ashram-entrance.jpg",
+                title: "Āshram Entrance",
+                caption: "The entrance on inaugural day, 15 January 2026.",
+              },
+            ].map((p) => (
+              <figure
+                key={p.src}
+                className="overflow-hidden rounded-2xl border border-warm-border bg-surface shadow-sm transition-shadow hover:shadow-md"
+              >
+                <div className="relative aspect-[4/3] w-full overflow-hidden">
+                  <Image
+                    src={p.src}
+                    alt={p.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="p-4">
+                  <h3 className="font-heading text-base font-semibold text-text-primary">
+                    {p.title}
+                  </h3>
+                  <p className="mt-1 text-sm leading-relaxed text-text-muted">
+                    {p.caption}
+                  </p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <div className="mt-8 text-center">
+            <Link
+              href="/gallery"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-saffron hover:text-saffron-dark"
+            >
+              View full photo gallery
+              <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── Layout Map ── */}
       <section className="section-padding bg-warm-cream">
         <div className="mx-auto max-w-7xl px-4">
