@@ -64,7 +64,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
   {
     title: "Meditation Hall Interior",
     caption:
-      "The meditation hall from within — finishing touches still being given.",
+      "The meditation hall from within — chandeliers aglow, with the shining mandala on the wall.",
     category: "ashram",
     height: "h-64",
     image: "/images/ashram/meditation-hall-inside.jpg",
