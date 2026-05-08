@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { MapPin, Calendar, Clock } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
@@ -97,6 +98,17 @@ export default function EventsPage() {
               ))}
             </div>
           </div>
+
+            {/* Poster */}
+            <div className="mt-10 flex justify-center">
+              <Image
+                src="/images/events/nc-satsang-poster.jpg"
+                alt="Finding Peace in Divine Forgiveness — Satsang with Swami Chidananda, Cary NC, May 8–10 2026"
+                width={520}
+                height={700}
+                className="rounded-2xl shadow-lg border border-warm-border w-full max-w-sm sm:max-w-md"
+              />
+            </div>
 
         </div>
       </section>
