@@ -42,73 +42,76 @@ export default function EventsPage() {
       </section>
 
       <section className="section-padding">
-        <div className="mx-auto max-w-5xl px-4">
+        <div className="mx-auto max-w-6xl px-4">
 
-          {/* ── NC Satsang ── */}
+          {/* ── NC Satsang — two-column layout ── */}
           <div className="rounded-2xl border border-warm-border bg-warm-cream/50 p-6 sm:p-10">
-            <div className="text-center">
-              <p className="text-xs font-bold uppercase tracking-widest text-saffron">
-                Visiting Honorable Guru
-              </p>
-              <h2 className="mt-2 font-heading text-2xl font-bold text-text-primary sm:text-3xl">
-                &ldquo;Finding Peace in Divine Forgiveness&rdquo;
-              </h2>
-              <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-text-muted sm:text-base">
-                A 3-day Satsang with{" "}
-                <strong className="text-text-primary">Swami Chidananda</strong> centered on the{" "}
-                <em>Shiva Aparadha Kshamapana Stotram</em> — a profound hymn of surrender,
-                forgiveness, and grace.
-              </p>
+            <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
 
-              <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-text-muted">
-                <span className="flex items-center gap-1.5">
-                  <MapPin className="h-4 w-4 text-saffron" />
-                  Home of Duke Hindu Chaplain, 104 Grannon Court, Cary, NC
-                </span>
+              {/* Left — poster */}
+              <div className="flex justify-center lg:w-80 lg:shrink-0">
+                <Image
+                  src="/images/events/nc-satsang-poster.jpg"
+                  alt="Finding Peace in Divine Forgiveness — Satsang with Swami Chidananda, Cary NC, May 8–10 2026"
+                  width={520}
+                  height={700}
+                  className="rounded-xl shadow-md border border-warm-border w-full max-w-xs lg:max-w-none"
+                />
               </div>
-            </div>
 
-            {/* Session cards */}
-            <div className="mt-10 grid gap-5 sm:grid-cols-3">
-              {NC_SESSIONS.map((s) => (
-                <div
-                  key={s.day}
-                  className="flex flex-col items-center gap-4 rounded-xl border border-warm-border bg-surface p-6 shadow-sm text-center"
-                >
-                  <div className="flex h-16 w-16 flex-col items-center justify-center rounded-lg bg-saffron text-white">
-                    <span className="text-[10px] font-bold uppercase leading-none tracking-wider">
-                      {s.month}
-                    </span>
-                    <span className="mt-0.5 text-xl font-bold leading-none">{s.dayNum}</span>
-                  </div>
-                  <div>
-                    <p className="font-heading text-base font-semibold text-text-primary">
-                      {s.day}
-                    </p>
-                    <div className="mt-1 flex items-center justify-center gap-1 text-xs text-text-muted">
-                      <Calendar className="h-3.5 w-3.5" />
-                      <span>{s.date}</span>
-                    </div>
-                    <div className="mt-2 flex items-center justify-center gap-1">
-                      <Clock className="h-3.5 w-3.5 text-saffron" />
-                      <span className="text-xs font-semibold text-saffron">{s.time}</span>
-                    </div>
-                  </div>
+              {/* Right — details */}
+              <div className="flex-1">
+                <p className="text-xs font-bold uppercase tracking-widest text-saffron">
+                  Visiting Honorable Guru
+                </p>
+                <h2 className="mt-2 font-heading text-2xl font-bold text-text-primary sm:text-3xl">
+                  &ldquo;Finding Peace in Divine Forgiveness&rdquo;
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-text-muted sm:text-base">
+                  A 3-day Satsang with{" "}
+                  <strong className="text-text-primary">Swami Chidananda</strong> centered on the{" "}
+                  <em>Shiva Aparadha Kshamapana Stotram</em> — a profound hymn of surrender,
+                  forgiveness, and grace.
+                </p>
+
+                <div className="mt-4 flex items-center gap-1.5 text-sm text-text-muted">
+                  <MapPin className="h-4 w-4 shrink-0 text-saffron" />
+                  <span>Home of Duke Hindu Chaplain, 104 Grannon Court, Cary, NC</span>
                 </div>
-              ))}
+
+                {/* Session cards */}
+                <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                  {NC_SESSIONS.map((s) => (
+                    <div
+                      key={s.day}
+                      className="flex flex-col items-center gap-3 rounded-xl border border-warm-border bg-surface p-5 shadow-sm text-center"
+                    >
+                      <div className="flex h-14 w-14 flex-col items-center justify-center rounded-lg bg-saffron text-white">
+                        <span className="text-[10px] font-bold uppercase leading-none tracking-wider">
+                          {s.month}
+                        </span>
+                        <span className="mt-0.5 text-lg font-bold leading-none">{s.dayNum}</span>
+                      </div>
+                      <div>
+                        <p className="font-heading text-sm font-semibold text-text-primary">
+                          {s.day}
+                        </p>
+                        <div className="mt-1 flex items-center justify-center gap-1 text-xs text-text-muted">
+                          <Calendar className="h-3 w-3" />
+                          <span>{s.date}</span>
+                        </div>
+                        <div className="mt-1.5 flex items-center justify-center gap-1">
+                          <Clock className="h-3 w-3 text-saffron" />
+                          <span className="text-xs font-semibold text-saffron">{s.time}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
             </div>
           </div>
-
-            {/* Poster */}
-            <div className="mt-10 flex justify-center">
-              <Image
-                src="/images/events/nc-satsang-poster.jpg"
-                alt="Finding Peace in Divine Forgiveness — Satsang with Swami Chidananda, Cary NC, May 8–10 2026"
-                width={520}
-                height={700}
-                className="rounded-2xl shadow-lg border border-warm-border w-full max-w-sm sm:max-w-md"
-              />
-            </div>
 
         </div>
       </section>
