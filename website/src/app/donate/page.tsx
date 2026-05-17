@@ -48,16 +48,49 @@ export default function DonatePage() {
     <div className="min-h-screen bg-warm-white">
 
       {/* ── FCRA Legal Notice ── */}
-      <div className="border-b border-amber-200 bg-amber-50 py-3">
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="flex items-start gap-2 text-sm text-amber-900 sm:items-center">
-            <AlertTriangle size={15} className="mt-0.5 shrink-0 text-amber-600 sm:mt-0" />
-            <p>
-              <span className="font-semibold">Legal Notice:</span> FOWAI Forum is not FCRA
-              registered. We strictly accept donations only from Indian citizens. We do not
-              accept funds from foreign nationals, OCI or PIO cardholders, or NRO accounts
-              held by foreign nationals.
-            </p>
+      <div className="border-b border-amber-200 bg-amber-50 py-5">
+        <div className="mx-auto max-w-4xl px-4">
+          <div className="flex items-start gap-3 text-sm text-amber-900">
+            <AlertTriangle size={18} className="mt-0.5 shrink-0 text-amber-600" />
+            <div className="space-y-3 leading-relaxed">
+              <p>
+                <span className="font-semibold">As per Indian Law:</span>{" "}
+                <span className="font-semibold">FOWAI FORUM</span> (which runs
+                the <span className="font-[family-name:var(--font-sanskrit)]">Jnāna Shakti āshram</span>) is not allowed to take
+                donations from people holding non-Indian passports in the
+                following ways:
+              </p>
+              <ol className="ml-1 list-inside list-decimal space-y-1">
+                <li>
+                  through Apps/Portals like RazorPay, Billdesk etc.
+                </li>
+                <li>
+                  through bank transfers from their NRO accounts.
+                </li>
+              </ol>
+              <p>
+                Having OCI or PIO cards will not make an exception to the
+                above scenario.
+              </p>
+              <div>
+                <p className="font-semibold">How then to contribute:</p>
+                <p className="mt-1">
+                  Donors with foreign passports may send cheques (in foreign
+                  currency or INR) in favour of{" "}
+                  <span className="font-semibold">FOWAI FORUM</span> to the
+                  trust&apos;s Mumbai address.
+                </p>
+              </div>
+              <address className="not-italic">
+                <span className="font-semibold">FOWAI FORUM</span>
+                <br />
+                8/53, Verma Nagar,
+                <br />
+                Andheri East,
+                <br />
+                Mumbai 400 069 India.
+              </address>
+            </div>
           </div>
         </div>
       </div>
