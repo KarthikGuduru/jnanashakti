@@ -48,8 +48,19 @@ export default function EventsPage() {
           <div className="rounded-2xl border border-warm-border bg-gradient-to-br from-sky-50 via-warm-cream/40 to-warm-cream/60 p-6 shadow-sm sm:p-10">
             <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
 
-              {/* Left — details */}
-              <div className="flex-1 order-2 lg:order-1">
+              {/* Left — poster */}
+              <div className="flex justify-center lg:w-80 lg:shrink-0 order-1">
+                <Image
+                  src="/images/events/vancouver-yoga-poster.jpg"
+                  alt="Celebrating the Power of Yoga — Swami Chidananda Saraswati, Consulate General of India Vancouver, 21 May 2026"
+                  width={520}
+                  height={700}
+                  className="rounded-xl shadow-md border border-warm-border w-full max-w-xs lg:max-w-none"
+                />
+              </div>
+
+              {/* Middle — details */}
+              <div className="flex-1 order-2">
                 <div className="flex items-center gap-2">
                   <Sparkles className="h-4 w-4 text-saffron" />
                   <p className="text-xs font-bold uppercase tracking-widest text-saffron">
@@ -131,7 +142,7 @@ export default function EventsPage() {
               </div>
 
               {/* Right — speaker */}
-              <aside className="flex flex-col items-center gap-3 lg:w-64 lg:shrink-0 order-1 lg:order-2">
+              <aside className="flex flex-col items-center gap-3 lg:w-56 lg:shrink-0 order-3">
                 <div className="relative h-44 w-44 overflow-hidden rounded-full border-4 border-white shadow-md sm:h-52 sm:w-52">
                   <Image
                     src="/images/swamiji.png"
