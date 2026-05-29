@@ -185,6 +185,59 @@ const CANADA_EVENTS: SpiritualEvent[] = [
       { name: "Sathyamoorthi", detail: "+1 604 365 3082" },
     ],
   },
+  {
+    id: "science-and-spirituality",
+    poster: "/images/events/science-and-spirituality.jpg",
+    badge: "Talk · Quebec",
+    title: "Science & Spirituality",
+    presenter: "FOWAI Forum (Flame of Who Am I)",
+    description:
+      "A talk by Swami Chidananda Saraswati exploring the meeting points of science and spirituality. Language: English. All are welcome.",
+    sessions: [
+      { date: "Friday, 29 May 2026", time: "6:30 – 8:00 PM" },
+    ],
+    venueName: "Hindu Mandir",
+    venueAddress: "50 Kesmark St, Dollard-Des Ormeaux, Quebec H9B 3K4",
+    contacts: [
+      { name: "Jyothi Varma", detail: "604 562 0269" },
+      { name: "Lakshmi Tata", detail: "514 826 7822" },
+      { name: "Anupratap", detail: "514 550 8310" },
+    ],
+  },
+  {
+    id: "toronto-events",
+    poster: "/images/events/toronto-events.jpg",
+    badge: "Events in Toronto · Open to All",
+    title: "Toronto Programs",
+    presenter:
+      "Sringeri Vidya Bharati Foundation Canada & Guruvayurappan Temple of Brampton",
+    description:
+      "Swami Chidananda's programs in the Greater Toronto Area — a Vedanta Satsang, a youth meet, and a talk on the Mukunda Mala. Open to all.",
+    sessions: [
+      {
+        date: "Saturday, 30 May 2026",
+        time: "11:00 AM – 12:00 PM",
+        note: "Vedanta Satsang · Sringeri Temple, 80 Brydon Dr, Etobicoke",
+      },
+      {
+        date: "Saturday, 30 May 2026",
+        time: "5:00 – 6:30 PM",
+        note: "Yuvathma's Youth Meet · Guruvayurappan Temple of Brampton",
+      },
+      {
+        date: "Sunday, 31 May 2026",
+        time: "10:30 AM – 12:00 PM",
+        note: "Talk on Mukunda Mala · Guruvayurappan Temple of Brampton",
+      },
+    ],
+    venueName: "Etobicoke & Brampton, Ontario",
+    venueAddress:
+      "Sringeri Temple, 80 Brydon Dr, Etobicoke · Guruvayurappan Temple, 2580 Countryside Drive, Brampton, ON L6R 3T4",
+    registerUrl: "https://www.guruvayur.ca",
+    contacts: [
+      { name: "More info", detail: "www.guruvayur.ca" },
+    ],
+  },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -199,7 +252,7 @@ function EventCard({ event }: { event: SpiritualEvent }) {
         <div className="flex justify-center lg:w-72 lg:shrink-0">
           <Image
             src={event.poster}
-            alt={`${event.title} — Swami Chidananda Saraswati, Vancouver Canada 2026`}
+            alt={`${event.title} — Swami Chidananda Saraswati, Canada 2026`}
             width={520}
             height={760}
             className="w-full max-w-xs rounded-xl border border-warm-border shadow-md lg:max-w-none"
@@ -370,7 +423,7 @@ export default function EventsPage() {
           {/* ── Canada visit ── */}
           <div className="text-center">
             <p className="text-xs font-bold uppercase tracking-widest text-saffron">
-              Vancouver, Canada · May 2026
+              Canada · May 2026
             </p>
             <h2 className="mt-2 font-heading text-3xl font-bold text-text-primary sm:text-4xl">
               Swamiji&apos;s Canada Visit
@@ -378,7 +431,7 @@ export default function EventsPage() {
             <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-saffron" />
             <p className="mx-auto mt-4 max-w-xl text-sm text-text-muted">
               A series of talks, lectures, and guided meditation sessions across
-              Vancouver and the Lower Mainland through May 2026.
+              Vancouver, Quebec, and Toronto through May 2026.
             </p>
           </div>
 

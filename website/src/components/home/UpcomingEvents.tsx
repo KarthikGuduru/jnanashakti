@@ -31,19 +31,20 @@ export default function UpcomingEvents() {
             <div className="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-text-muted">
               <span className="inline-flex items-center gap-1.5">
                 <CalendarDays className="h-4 w-4 text-saffron" />
-                5 events · May 2026
+                7 events · May 2026
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <MapPin className="h-4 w-4 text-saffron" />
-                Vancouver &amp; the Lower Mainland
+                Vancouver, Quebec &amp; Toronto
               </span>
             </div>
 
             <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-text-muted">
               A series of talks, lectures, and guided meditation sessions with{" "}
-              <strong className="text-text-primary">Swami Chidananda</strong> —
-              from the Power of Yoga at the Consulate General of India to the
-              three-day <em>Gita for Life</em> series.
+              <strong className="text-text-primary">Swami Chidananda</strong>{" "}
+              across Vancouver, Quebec, and Toronto — from the Power of Yoga at
+              the Consulate General of India to the three-day{" "}
+              <em>Gita for Life</em> series.
             </p>
 
             <Link
