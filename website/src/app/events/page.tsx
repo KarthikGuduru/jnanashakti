@@ -436,7 +436,8 @@ export default function EventsPage() {
           </div>
 
           <div className="mt-12 space-y-10">
-            {CANADA_EVENTS.map((event) => (
+            {/* Latest events first, older ones below (array is chronological) */}
+            {[...CANADA_EVENTS].reverse().map((event) => (
               <EventCard key={event.id} event={event} />
             ))}
           </div>
