@@ -8,6 +8,9 @@ import {
   BookOpen,
   Phone,
   Mail,
+  Banknote,
+  Building2,
+  Globe,
 } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
@@ -378,6 +381,194 @@ function EventCard({ event }: { event: SpiritualEvent }) {
 }
 
 /* ------------------------------------------------------------------ */
+/*  First Residential Vedanta Study Course (Nov 29 – Dec 6, 2026)      */
+/* ------------------------------------------------------------------ */
+
+const RETREAT_PAGES = [
+  {
+    src: "/images/events/vedanta-retreat-poster.jpg",
+    caption: "Course Poster",
+    alt: "FOWAI Forum First Residential Vedanta Study Course at Jnana Shakti Ashram, Sunday November 29 to December 6, 2026 — Hastāmalaka Stotra with Swami Chidananda and Bhaja Govindam with Brni Vibha Chaitanya ji",
+  },
+  {
+    src: "/images/events/vedanta-retreat-texts.jpg",
+    caption: "About the Texts",
+    alt: "About the texts — Hastāmalaka Stotra and Bhaja Govindam, compositions attributed to Ādi Shankarāchārya",
+  },
+  {
+    src: "/images/events/vedanta-retreat-details.jpg",
+    caption: "Donation & Schedule",
+    alt: "Retreat donation Rs. 10,000, payment options, check-in and check-out times, and inquiry contact",
+  },
+];
+
+const RETREAT_SCHEDULE = [
+  { label: "Check in", detail: "Anytime after 11:00 AM, Sunday, November 29" },
+  { label: "Inauguration", detail: "4:30 PM, Sunday, November 29" },
+  { label: "Check out", detail: "After lunch at 1:00 PM, Sunday, December 6" },
+];
+
+function VedantaRetreat() {
+  return (
+    <div className="rounded-2xl border border-warm-border bg-warm-cream/50 p-6 sm:p-10">
+      {/* Poster pages */}
+      <div className="grid gap-6 sm:grid-cols-3">
+        {RETREAT_PAGES.map((page) => (
+          <a
+            key={page.src}
+            href={page.src}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center gap-3"
+          >
+            <Image
+              src={page.src}
+              alt={page.alt}
+              width={934}
+              height={1400}
+              className="w-full max-w-xs rounded-xl border border-warm-border shadow-md transition-shadow group-hover:shadow-lg sm:max-w-none"
+            />
+            <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-saffron">
+              {page.caption}
+              <ExternalLink className="h-3 w-3" />
+            </span>
+          </a>
+        ))}
+      </div>
+
+      <div className="mt-10 grid gap-6 lg:grid-cols-2">
+        {/* Study texts */}
+        <div className="rounded-xl border border-warm-border bg-surface p-6 shadow-sm">
+          <div className="flex items-center gap-2">
+            <BookOpen className="h-5 w-5 text-saffron" />
+            <h3 className="font-heading text-lg font-semibold text-text-primary">
+              Study Texts
+            </h3>
+          </div>
+          <ul className="mt-4 space-y-4 text-sm">
+            <li>
+              <p className="font-semibold text-text-primary">
+                <span className="font-[family-name:var(--font-sanskrit)]">Hastāmalaka Stotra</span>
+                <span className="font-normal text-text-muted"> — with Swami Chidananda</span>
+              </p>
+              <p className="mt-1 leading-relaxed text-text-muted">
+                Fourteen verses attributed to Ādi Shankarāchārya, pointing to liberating
+                Self-knowledge with great relevance to daily life.
+              </p>
+            </li>
+            <li>
+              <p className="font-semibold text-text-primary">
+                <span className="font-[family-name:var(--font-sanskrit)]">Bhaja Govindam</span>
+                <span className="font-normal text-text-muted"> — with Brni Vibha Chaitanya ji</span>
+              </p>
+              <p className="mt-1 leading-relaxed text-text-muted">
+                Thirty-one verses by Ādi Shankarāchārya on the pitfalls of worldly life and
+                how to rise to the serenity of a life of noble values.
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        {/* Schedule + venue */}
+        <div className="rounded-xl border border-warm-border bg-surface p-6 shadow-sm">
+          <div className="flex items-center gap-2">
+            <Calendar className="h-5 w-5 text-saffron" />
+            <h3 className="font-heading text-lg font-semibold text-text-primary">
+              Schedule
+            </h3>
+          </div>
+          <dl className="mt-4 space-y-3 text-sm">
+            {RETREAT_SCHEDULE.map((s) => (
+              <div key={s.label} className="flex flex-col gap-0.5 sm:flex-row sm:gap-3">
+                <dt className="flex items-center gap-1.5 font-semibold text-text-primary sm:w-32 sm:shrink-0">
+                  <Clock className="h-3.5 w-3.5 text-saffron" />
+                  {s.label}
+                </dt>
+                <dd className="text-text-muted">{s.detail}</dd>
+              </div>
+            ))}
+          </dl>
+          <div className="mt-5 flex items-start gap-2 border-t border-warm-border pt-5 text-sm text-text-muted">
+            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-saffron" />
+            <span>
+              <span className="font-semibold text-text-primary">Jnana Shakti Ashram</span>
+              {" — "}Vave Tarfe Asare, Jambhulpada, Sudhagad, Raigad 410205
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Donation + payment */}
+      <div className="mt-6 rounded-xl border border-warm-border bg-surface p-6 shadow-sm sm:p-8">
+        <h3 className="text-center font-heading text-xl font-bold text-text-primary">
+          Retreat Donation: ₹10,000
+        </h3>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          <div className="rounded-xl border border-warm-border bg-warm-cream p-5">
+            <div className="flex items-center gap-2">
+              <Banknote className="h-5 w-5 text-saffron" />
+              <h4 className="font-heading font-semibold text-text-primary">Cheque</h4>
+            </div>
+            <p className="mt-2 text-sm leading-relaxed text-text-muted">
+              Write a cheque in favour of{" "}
+              <strong className="text-text-primary">FOWAI FORUM</strong> and send it to the
+              office address.
+            </p>
+          </div>
+          <div className="rounded-xl border border-warm-border bg-warm-cream p-5">
+            <div className="flex items-center gap-2">
+              <Building2 className="h-5 w-5 text-saffron" />
+              <h4 className="font-heading font-semibold text-text-primary">NEFT Transfer</h4>
+            </div>
+            <dl className="mt-2 space-y-1 text-sm">
+              <div className="flex justify-between gap-2">
+                <dt className="whitespace-nowrap text-text-muted">Account</dt>
+                <dd className="font-medium text-text-primary">FOWAI FORUM</dd>
+              </div>
+              <div className="flex justify-between gap-2">
+                <dt className="whitespace-nowrap text-text-muted">Bank</dt>
+                <dd className="text-right font-medium text-text-primary">HDFC Bank, Vishal Hall</dd>
+              </div>
+              <div className="flex justify-between gap-2">
+                <dt className="whitespace-nowrap text-text-muted">SB A/c No.</dt>
+                <dd className="whitespace-nowrap font-medium text-text-primary">50100 24494 2248</dd>
+              </div>
+              <div className="flex justify-between gap-2">
+                <dt className="whitespace-nowrap text-text-muted">IFSC</dt>
+                <dd className="font-medium text-text-primary">HDFC0000086</dd>
+              </div>
+            </dl>
+          </div>
+          <div className="rounded-xl border border-warm-border bg-warm-cream p-5">
+            <div className="flex items-center gap-2">
+              <Globe className="h-5 w-5 text-saffron" />
+              <h4 className="font-heading font-semibold text-text-primary">
+                Foreign Passport Holders
+              </h4>
+            </div>
+            <p className="mt-2 text-sm leading-relaxed text-text-muted">
+              Please contact{" "}
+              <a href="tel:+919373324070" className="font-medium text-text-primary hover:text-saffron">
+                +91 93733 24070
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+        <p className="mt-6 flex flex-wrap items-center justify-center gap-1.5 text-center text-sm text-text-muted">
+          <Phone className="h-4 w-4 text-saffron" />
+          For inquiries, contact <span className="font-semibold text-text-primary">Renu Gandhi</span>
+          {" "}at{" "}
+          <a href="tel:+917715933334" className="font-medium text-text-primary hover:text-saffron">
+            +91 77159 33334
+          </a>
+        </p>
+      </div>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
 /*  NC Satsang sessions                                                */
 /* ------------------------------------------------------------------ */
 
@@ -420,8 +611,28 @@ export default function EventsPage() {
       <section className="section-padding">
         <div className="mx-auto max-w-6xl px-4">
 
-          {/* ── Canada visit ── */}
+          {/* ── Residential Vedanta course ── */}
           <div className="text-center">
+            <p className="text-xs font-bold uppercase tracking-widest text-saffron">
+              Jnana Shakti Ashram · Nov 29 – Dec 6, 2026
+            </p>
+            <h2 className="mt-2 font-heading text-3xl font-bold text-text-primary sm:text-4xl">
+              First Residential Vedanta Study Course
+            </h2>
+            <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-saffron" />
+            <p className="mx-auto mt-4 max-w-xl text-sm text-text-muted">
+              A residential study course presented by FOWAI Forum at the serene
+              Jnana Shakti Ashram.{" "}
+              <strong className="text-text-primary">Only 15 seats available.</strong>
+            </p>
+          </div>
+
+          <div className="mt-10">
+            <VedantaRetreat />
+          </div>
+
+          {/* ── Canada visit ── */}
+          <div className="mt-16 text-center">
             <p className="text-xs font-bold uppercase tracking-widest text-saffron">
               Canada · May 2026
             </p>
